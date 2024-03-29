@@ -1,0 +1,22 @@
+.side_bar_container{
+    -fx-background-color: #1536d3;
+    -fx-alignment: center;
+    -fx-background-radius: 0 10 10 0;
+    -fx-border-radius-radius: 0 10 10 0;
+}
+
+.side_bar_container Button{
+    -fx-background-color: #1536d3;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15 ;
+    -fx-cursor: hand;
+
+}
+.side_bar_container Button:hover{
+    -fx-background-color: #326de1;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15 ;
+    -fx-cursor: hand;
+
+
+}

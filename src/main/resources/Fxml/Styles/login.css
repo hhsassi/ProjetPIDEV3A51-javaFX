@@ -1,0 +1,98 @@
+.login_container {
+
+    -fx-background-color: #161515;
+
+
+}
+
+/* Right part image */
+.login_right_container {
+    -fx-background-color: black;
+    -fx-alignment: center;
+
+}
+/* Sign in button */
+.sign-in-button {
+    -fx-background-color: #000000; /* Green */
+    -fx-text-fill: white;
+    /*-fx-font-size: 35px;*/
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+}
+
+.sign-in-button:hover {
+    -fx-background-color: #2c2c2c; /* Darker Green */
+}
+
+.sign-in-button:pressed {
+    -fx-background-color: #464646; /* Even Darker Green */
+}
+
+/* --------- */
+
+/* Sign in button */
+.sign-up-button {
+    -fx-background-color: #006eff; /* Green */
+    -fx-text-fill: #ffffff;
+
+
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+}
+
+.sign-up-button:hover {
+    -fx-background-color: #004ba8; /* Darker Green */
+}
+
+.sign-up-button:pressed {
+    -fx-background-color: #0057c9; /* Even Darker Green */
+}
+
+/* --------- */
+/* Sign in button */
+.Register-button {
+    -fx-background-color: #000000; /* Green */
+    -fx-text-fill: #ffffff;
+
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.Register-button:hover {
+  -fx-background-color: #232323; /* Darker Green */
+
+}
+
+.Register-button:pressed {
+    -fx-background-color: #424242; /* Even Darker Green */
+
+}
+/* input fields */
+
+.input-field {
+    -fx-background-color: #eeeeee; /* Light Gray */
+    -fx-border-color: #d2d2d2; /* Light Gray */
+    -fx-border-width: 1px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+.input-field:focused  {
+    -fx-border-color: #007bff; /* Blue */
+    -fx-background-color: #f6f6f6;
+}
+
+.input-field:hover {
+    -fx-background-color: #f6f6f6; /* Lighter Gray */
+}
+/* --------- */
+
+
+

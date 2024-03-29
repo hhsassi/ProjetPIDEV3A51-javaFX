@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="864.0" prefWidth="80.0" styleClass="side_bar_container" stylesheets="@../Styles/Admin/MenuAdmin.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminMenuController">
+   <children>
+      <VBox layoutX="6.0" layoutY="95.0" prefHeight="446.0" prefWidth="68.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="95.0">
+         <children>
+            <Button fx:id="dashboard_Admin_btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="30.0">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-home-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="11.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="transaction_Admin_btn" mnemonicParsing="false" prefHeight="66.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-transaction-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Button>
+            <Button fx:id="portefeuille_Admin_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-profit-90.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Button>
+            <Button fx:id="credit_Admin_btn" mnemonicParsing="false" prefHeight="66.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-bank-account-90.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Button>
+            <Button fx:id="certif_Admin_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-diploma-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Button>
+            <Button fx:id="projet_Admin_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-project-100%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="6.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <VBox layoutX="7.0" layoutY="660.0" prefHeight="150.0" prefWidth="68.0" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="660.0">
+         <children>
+            <Button fx:id="profile_Admin_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-user-90%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="logout_Admin_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-log-out-90.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
