@@ -7,7 +7,7 @@ Artemis Bank est une application de gestion financière construite avec le frame
 
 ## Modules
 
-### 1. Gestion Utilisateurs
+### 1. Gestion Utilisateurs 
 Ce module permet la gestion des utilisateurs de l'application. Il inclut des fonctionnalités telles que l'inscription, la connexion, la gestion des profils utilisateurs et des autorisations.
 
 ### 2. Gestion Transactions
@@ -29,14 +29,14 @@ Le module de gestion des certifications permet de gérer les certifications offr
 
 Les contributions sont les bienvenues ! Si vous souhaitez contribuer à Artemis Bank, veuillez soumettre une pull request avec vos modifications ou signaler des problèmes dans la section des issues.
 
-## Auteurs
+## Membres de l'équipe
 
-Artemis Bank a été développé par AlphaDev composée par :
-- Ahmed Fathallah
-- Hassen Haj Sassi
-- Hazem Ouasli
-- Rahma Trabelsi
-- Nada Louhichi
-- Zeineb Daghfous
+Artemis Bank a été développé par l'équipe d'AlphaDev, composée de :
+- Ahmed Fathallah (Gestion des Certifications)
+- Hassen Haj Sassi (Gestion des Utilisateurs)
+- Hazem Ouasli (Gestion des Projets d'Investissement)
+- Rahma Trabelsi (Gestion des Transactions)
+- Nada Louhichi (Gestion des Crédits)
+- Zeineb Daghfous (Gestion du Portefeuille d'Investissement)
 
 
