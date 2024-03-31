@@ -1,5 +1,4 @@
 # Artemis Bank - Application Desktop de Gestion Financière
-![login7](https://github.com/hhsassi/ProjetPIDEV3A51-javaFX/assets/101049506/d3019d97-8b51-48e3-bb4b-a862da083441)
 
 
 Artemis Bank est une application de gestion financière construite avec le framework JavaFx. Cette application comprend plusieurs modules permettant la gestion des utilisateurs, des transactions, des prêts, des portefeuilles d'investissement, des investissements dans des projets et des certifications.
