@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d4b74-97b2-4294-9f42-df3b55bc0a6e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/models/Certif.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +20,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -139,7 +141,7 @@
       <workItem from="1711662751593" duration="12171000" />
       <workItem from="1711905741052" duration="3315000" />
       <workItem from="1711910620798" duration="10503000" />
-      <workItem from="1713002944785" duration="3779000" />
+      <workItem from="1713002944785" duration="11546000" />
     </task>
     <servers />
   </component>
