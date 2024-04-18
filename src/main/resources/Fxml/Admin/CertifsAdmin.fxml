@@ -1,51 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController">
-   <children>
-      <Text layoutX="717.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Certif" />
-      <TableView fx:id="table_view_admin_fld" layoutX="61.0" layoutY="89.0" prefHeight="634.0" prefWidth="667.0" />
-      <Line endX="-0.73333740234375" endY="659.4000244140625" layoutX="753.0" layoutY="111.0" startX="-0.73333740234375" startY="-42.46666717529297" />
-      <TextField  layoutX="209.0" layoutY="758.0" />
-      <Button layoutX="427.0" layoutY="758.0" mnemonicParsing="false" stylesheets="@../Styles/login.css" text="delete" textFill="#804dc7" />
-      <Button layoutX="509.0" layoutY="758.0" mnemonicParsing="false" text="Search" />
-      <Button layoutX="593.0" layoutY="758.0" mnemonicParsing="false" text="refrech" />
-      <Text layoutX="773.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Name" wrappingWidth="146.307861328125">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="1062.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Duration" wrappingWidth="155.90771484375">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="773.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Lvl" wrappingWidth="113.33660888671875">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="1004.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="badge" wrappingWidth="49.60000000000008">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <TextField layoutX="772.0" layoutY="150.0" />
-      <TextField layoutX="1065.0" layoutY="150.0" />
-      <TextField layoutX="772.0" layoutY="301.0" />
-      <Text layoutX="1062.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Description " wrappingWidth="178.13665771484375">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <TextField layoutX="1065.0" layoutY="254.0" prefHeight="94.0" prefWidth="273.0" />
-      <AnchorPane layoutX="922.0" layoutY="390.0" prefHeight="200.0" prefWidth="200.0" />
-   </children>
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController">
+    <children>
+        <Text layoutX="695.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Management" wrappingWidth="200.0">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <TableView fx:id="tableCertifications" layoutX="58.0" layoutY="49.0" prefHeight="682.0" prefWidth="602.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="150.0" text="Name" />
+                <TableColumn fx:id="colBadgeImage" prefWidth="100.0" text="Badge" />
+                <TableColumn fx:id="colDescription" prefWidth="168.99996948242188" text="Description" />
+                <TableColumn fx:id="colDuration" prefWidth="81.4000244140625" text="Duration" />
+                <TableColumn fx:id="colLevel" prefWidth="50.0" text="Level" />
+            </columns>
+        </TableView>
+        <Text layoutX="758.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <TextField fx:id="nameFld" layoutX="764.0" layoutY="131.0" prefHeight="26.0" prefWidth="211.0" promptText="Certification Name" />
+        <TextField fx:id="descriptionFld" layoutX="764.0" layoutY="180.0" prefHeight="26.0" prefWidth="211.0" promptText="Description" />
+        <TextField fx:id="durationFld" layoutX="1042.0" layoutY="118.0" prefHeight="26.0" prefWidth="211.0" promptText="Duration (in hours)" />
+        <TextField fx:id="levelFld" layoutX="764.0" layoutY="229.0" prefHeight="26.0" prefWidth="211.0" promptText="Level" />
+        <ImageView fx:id="badgePreview" fitHeight="200.0" fitWidth="200.0" layoutX="1012.0" layoutY="142.0" preserveRatio="true" />
+        <Button fx:id="uploadBadgeBtn" layoutX="1057.0" layoutY="229.0" mnemonicParsing="false" onAction="#uploadBadge" text="Upload Badge" />
+        <Button fx:id="addBtn" layoutX="1057.0" layoutY="279.0" mnemonicParsing="false" onAction="#addCertif" prefHeight="34.0" prefWidth="91.0" text="Add" />
+        <Button fx:id="deleteBtn" layoutX="764.0" layoutY="279.0" mnemonicParsing="false" onAction="#deleteCertif" prefHeight="34.0" prefWidth="91.0" text="Delete" />
+        <Button fx:id="updateBtn" layoutX="911.0" layoutY="279.0" mnemonicParsing="false" onAction="#updateCertif" prefHeight="34.0" prefWidth="91.0" text="Update" />
+
+
+    </children>
 </AnchorPane>

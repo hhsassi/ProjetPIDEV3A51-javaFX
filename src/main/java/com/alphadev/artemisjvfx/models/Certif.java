@@ -1,63 +1,115 @@
 package com.alphadev.artemisjvfx.models;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.image.Image;
 
 public class Certif {
-    private String  nom_certif;
-    private String bage_certif;
-    private String description_certif;
-    private Integer duree_certif;
-    private Integer niveau_certif;
+    private SimpleIntegerProperty id = new SimpleIntegerProperty();
+    private SimpleStringProperty nom_certif = new SimpleStringProperty();
+    private SimpleStringProperty badge_certif = new SimpleStringProperty();
+    private Image badgeImage;
+    private SimpleStringProperty description_certif = new SimpleStringProperty();
+    private SimpleIntegerProperty duree_certif = new SimpleIntegerProperty();
+    private SimpleIntegerProperty niveau_certif = new SimpleIntegerProperty();
 
-    public Certif(String nom_certif, String bage_certif, String description_certif, Integer duree_certif, Integer niveau_certif) {
-        this.nom_certif = nom_certif;
-        this.bage_certif = bage_certif;
-        this.description_certif = description_certif;
-        this.duree_certif = duree_certif;
-        this.niveau_certif = niveau_certif;
+    public Certif(int id, String nom, String badgePath, String description, int duree, int niveau) {
+        this.id.set(id);
+        this.nom_certif.set(nom);
+        this.badge_certif.set(badgePath);
+        this.description_certif.set(description);
+        this.duree_certif.set(duree);
+        this.niveau_certif.set(niveau);
+        this.badgeImage = new Image("file:src/main/resources/" + badgePath, true); // Load image asynchronously
+    }
+    public Certif(String nom, String badgePath, String description, int duree, int niveau) {
+        this.nom_certif.set(nom);
+        this.badge_certif.set(badgePath);
+        this.description_certif.set(description);
+        this.duree_certif.set(duree);
+        this.niveau_certif.set(niveau);
+        this.badgeImage = new Image("file:src/main/resources/" + badgePath, true); // Load image asynchronously
     }
 
-    public String getNom_certif() {
+    // Getters for JavaFX TableView to use Properties
+    public SimpleIntegerProperty idProperty() {
+        return id;
+    }
+
+    public SimpleStringProperty nom_certifProperty() {
         return nom_certif;
     }
 
-    public void setNom_certif(String nom_certif) {
-        this.nom_certif = nom_certif;
+    public Image getBadgeImage() {
+
+        return badgeImage;
     }
 
-    public String getBage_certif() {
-        return bage_certif;
-    }
-
-    public void setBage_certif(String bage_certif) {
-        this.bage_certif = bage_certif;
-    }
-
-    public String getDescription_certif() {
+    public SimpleStringProperty description_certifProperty() {
         return description_certif;
     }
 
-    public void setDescription_certif(String description_certif) {
-        this.description_certif = description_certif;
+    public int getId() {
+        return id.get();
     }
 
-    public Integer getDuree_certif() {
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public String getNom_certif() {
+        return nom_certif.get();
+    }
+
+    public void setNom_certif(String nom_certif) {
+        this.nom_certif.set(nom_certif);
+    }
+
+    public String getBadge_certif() {
+        return badge_certif.get();
+    }
+
+    public SimpleStringProperty badge_certifProperty() {
+        return badge_certif;
+    }
+
+    public void setBadge_certif(String badge_certif) {
+        this.badge_certif.set(badge_certif);
+    }
+
+    public void setBadgeImage(Image badgeImage) {
+        this.badgeImage = badgeImage;
+    }
+
+    public String getDescription_certif() {
+        return description_certif.get();
+    }
+
+    public void setDescription_certif(String description_certif) {
+        this.description_certif.set(description_certif);
+    }
+
+    public int getDuree_certif() {
+        return duree_certif.get();
+    }
+
+    public void setDuree_certif(int duree_certif) {
+        this.duree_certif.set(duree_certif);
+    }
+
+    public int getNiveau_certif() {
+        return niveau_certif.get();
+    }
+
+    public void setNiveau_certif(int niveau_certif) {
+        this.niveau_certif.set(niveau_certif);
+    }
+
+    public SimpleIntegerProperty duree_certifProperty() {
         return duree_certif;
     }
 
-    public void setDuree_certif(Integer duree_certif) {
-        this.duree_certif = duree_certif;
-    }
-
-    public Integer getNiveau_certif() {
+    public SimpleIntegerProperty niveau_certifProperty() {
         return niveau_certif;
-    }
-
-    public void setNiveau_certif(Integer niveau_certif) {
-        this.niveau_certif = niveau_certif;
-    }
-
-    @Override
-    public String toString() {
-        return nom_certif;
     }
 }
