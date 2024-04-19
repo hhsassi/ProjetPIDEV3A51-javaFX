@@ -59,6 +59,7 @@ public class AdminCertifsController implements Initializable  {
             if (newSelection == null) {
                 addBtn.setDisable(false);  // Enable the add button when no row is selected
             } else {
+                clearErrorMessages();
                 addBtn.setDisable(true);   // Disable the add button when a row is selected
             }
         });
@@ -158,6 +159,7 @@ public class AdminCertifsController implements Initializable  {
             serviceCertif.addCertif(newCertif);
             clearForm();
             loadCertifications();
+            clearErrorMessages();
             showConfirmation("Certification added successfully!");
         }
     }
@@ -209,6 +211,7 @@ public class AdminCertifsController implements Initializable  {
 
         clearForm();
         loadCertifications();
+        clearErrorMessages();
         showConfirmation("Certification updated successfully!");
         }
     }
@@ -226,7 +229,8 @@ public class AdminCertifsController implements Initializable  {
             serviceCertif.deleteCertif(selectedCertif.getId());
             loadCertifications(); // Reload the list to reflect the deletion
             showConfirmation("Certification deleted successfully!");
-            clearForm(); // Clear the form fields
+            clearForm();
+            clearErrorMessages();// Clear the form fields
         }
     }
     private boolean showConfirmationDialog(String message) {

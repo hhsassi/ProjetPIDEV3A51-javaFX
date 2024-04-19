@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="864.0" prefWidth="1456.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController">
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController">
     <children>
-        <Text layoutX="695.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Management" wrappingWidth="200.0">
+        <Text layoutX="789.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Management" wrappingWidth="200.0">
             <font>
                 <Font size="24.0" />
             </font>
             <style>-fx-fill: #2c3e50; -fx-font-weight: bold;</style>
         </Text>
-        <TableView fx:id="tableCertifications" layoutX="58.0" layoutY="49.0" prefHeight="682.0" prefWidth="602.0" style="-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-table-cell-border-color: transparent;">
+        <TableView fx:id="tableCertifications" layoutX="28.0" layoutY="49.0" prefHeight="682.0" prefWidth="700.0" style="-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-table-cell-border-color: transparent;">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
                 <TableColumn fx:id="colName" prefWidth="150.0" text="Name" />
@@ -36,10 +32,10 @@
         <Button fx:id="addBtn" layoutX="1106.0" layoutY="427.0" mnemonicParsing="false" onAction="#addCertif" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #2ecc71; -fx-text-fill: #ffffff; -fx-border-radius: 5;" text="Add" />
         <Button fx:id="deleteBtn" layoutX="764.0" layoutY="427.0" mnemonicParsing="false" onAction="#deleteCertif" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #e74c3c; -fx-text-fill: #ffffff; -fx-border-radius: 5;" text="Delete" />
         <Button fx:id="updateBtn" layoutX="936.0" layoutY="427.0" mnemonicParsing="false" onAction="#updateCertif" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff; -fx-border-radius: 5;" text="Update" />
-        <Text fx:id="name_error_txt" layoutX="844.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red"/>
-        <Text fx:id="description_error_txt" layoutX="844.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red" />
-        <Text fx:id="lvl_error_txt" layoutX="844.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red"/>
-        <Text fx:id="duree_error_txt" layoutX="844.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red"/>
-        <Text fx:id="image_error_txt" layoutX="1199.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" fill="red" />
+        <Text fx:id="name_error_txt" fill="red" layoutX="844.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Text fx:id="description_error_txt" fill="red" layoutX="844.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Text fx:id="lvl_error_txt" fill="red" layoutX="844.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Text fx:id="duree_error_txt" fill="red" layoutX="844.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <Text fx:id="image_error_txt" fill="red" layoutX="1199.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" />
     </children>
 </AnchorPane>
