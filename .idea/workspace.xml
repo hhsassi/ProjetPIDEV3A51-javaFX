@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d4b74-97b2-4294-9f42-df3b55bc0a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/services/ServiceCertif.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/models/Certif.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/models/Certif.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +19,8 @@
       <list>
         <option value="Interface" />
         <option value="FxmlFile" />
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -146,7 +144,8 @@
       <workItem from="1713262069664" duration="2202000" />
       <workItem from="1713272867745" duration="1921000" />
       <workItem from="1713343040681" duration="9127000" />
-      <workItem from="1713448835915" duration="8333000" />
+      <workItem from="1713448835915" duration="8675000" />
+      <workItem from="1713515599663" duration="3211000" />
     </task>
     <servers />
   </component>

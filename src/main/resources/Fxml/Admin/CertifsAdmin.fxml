@@ -1,42 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController">
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController" style="-fx-background-color: #ffffff;">
     <children>
         <Text layoutX="695.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Management" wrappingWidth="200.0">
             <font>
                 <Font size="24.0" />
             </font>
+            <style>-fx-fill: #2c3e50; -fx-font-weight: bold;</style>
         </Text>
-        <TableView fx:id="tableCertifications" layoutX="58.0" layoutY="49.0" prefHeight="682.0" prefWidth="602.0">
+        <TableView fx:id="tableCertifications" layoutX="58.0" layoutY="49.0" prefHeight="682.0" prefWidth="602.0" style="-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-table-cell-border-color: transparent;">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
                 <TableColumn fx:id="colName" prefWidth="150.0" text="Name" />
                 <TableColumn fx:id="colBadgeImage" prefWidth="100.0" text="Badge" />
-                <TableColumn fx:id="colDescription" prefWidth="168.99996948242188" text="Description" />
-                <TableColumn fx:id="colDuration" prefWidth="81.4000244140625" text="Duration" />
-                <TableColumn fx:id="colLevel" prefWidth="50.0" text="Level" />
+                <TableColumn fx:id="colDescription" prefWidth="200.0" text="Description" />
+                <TableColumn fx:id="colDuration" prefWidth="100.0" text="Duration" />
+                <TableColumn fx:id="colLevel" prefWidth="100.0" text="Level" />
             </columns>
         </TableView>
-        <Text layoutX="758.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Text>
-        <TextField fx:id="nameFld" layoutX="764.0" layoutY="131.0" prefHeight="26.0" prefWidth="211.0" promptText="Certification Name" />
-        <TextField fx:id="descriptionFld" layoutX="764.0" layoutY="180.0" prefHeight="26.0" prefWidth="211.0" promptText="Description" />
-        <TextField fx:id="durationFld" layoutX="1042.0" layoutY="118.0" prefHeight="26.0" prefWidth="211.0" promptText="Duration (in hours)" />
-        <TextField fx:id="levelFld" layoutX="764.0" layoutY="229.0" prefHeight="26.0" prefWidth="211.0" promptText="Level" />
-        <ImageView fx:id="badgePreview" fitHeight="200.0" fitWidth="200.0" layoutX="1012.0" layoutY="142.0" preserveRatio="true" />
-        <Button fx:id="uploadBadgeBtn" layoutX="1057.0" layoutY="229.0" mnemonicParsing="false" onAction="#uploadBadge" text="Upload Badge" />
-        <Button fx:id="addBtn" layoutX="1057.0" layoutY="279.0" mnemonicParsing="false" onAction="#addCertif" prefHeight="34.0" prefWidth="91.0" text="Add" />
-        <Button fx:id="deleteBtn" layoutX="764.0" layoutY="279.0" mnemonicParsing="false" onAction="#deleteCertif" prefHeight="34.0" prefWidth="91.0" text="Delete" />
-        <Button fx:id="updateBtn" layoutX="911.0" layoutY="279.0" mnemonicParsing="false" onAction="#updateCertif" prefHeight="34.0" prefWidth="91.0" text="Update" />
-
-
+        <TextField fx:id="nameFld" layoutX="764.0" layoutY="131.0" prefHeight="26.0" prefWidth="211.0" promptText="Certification Name" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
+        <TextField fx:id="descriptionFld" layoutX="764.0" layoutY="180.0" prefHeight="26.0" prefWidth="211.0" promptText="Description" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
+        <TextField fx:id="durationFld" layoutX="1042.0" layoutY="118.0" prefHeight="26.0" prefWidth="211.0" promptText="Duration (in hours)" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
+        <TextField fx:id="levelFld" layoutX="764.0" layoutY="229.0" prefHeight="26.0" prefWidth="211.0" promptText="Level" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
+        <ImageView fx:id="badgePreview" fitHeight="200.0" fitWidth="200.0" layoutX="1012.0" layoutY="142.0" preserveRatio="true" style="-fx-border-color: #bdc3c7; -fx-border-width: 2;"/>
+        <Button fx:id="uploadBadgeBtn" layoutX="1057.0" layoutY="229.0" mnemonicParsing="false" onAction="#uploadBadge" text="Upload Badge" prefWidth="300" style="-fx-background-color: #3498db; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
+        <Button fx:id="addBtn" layoutX="1057.0" layoutY="279.0" mnemonicParsing="false" onAction="#addCertif" prefHeight="34.0" prefWidth="91.0" text="Add" style="-fx-background-color: #2ecc71; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
+        <Button fx:id="deleteBtn" layoutX="764.0" layoutY="279.0" mnemonicParsing="false" onAction="#deleteCertif" prefHeight="34.0" prefWidth="91.0" text="Delete" style="-fx-background-color: #e74c3c; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
+        <Button fx:id="updateBtn" layoutX="911.0" layoutY="279.0" mnemonicParsing="false" onAction="#updateCertif" prefHeight="34.0" prefWidth="91.0" text="Update" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
     </children>
 </AnchorPane>

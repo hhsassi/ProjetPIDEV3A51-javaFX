@@ -8,8 +8,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import java.io.File;
 import java.net.URL;
@@ -25,6 +27,7 @@ import javafx.scene.image.ImageView;
 public class AdminCertifsController implements Initializable {
     public static User user = null;
 
+    @FXML public Button updateBtn;
     @FXML public TextField nameFld;
     @FXML public TextField descriptionFld;
     @FXML public TextField durationFld;
@@ -35,6 +38,7 @@ public class AdminCertifsController implements Initializable {
     @FXML public TableColumn<Certif, Integer> colDuration, colLevel;
     @FXML public TableColumn<Certif, Image> colBadgeImage;
     @FXML public ImageView badgePreview;
+    @FXML public Button addBtn;
 
     public String badgePath;
     public final ServiceCertif serviceCertif = new ServiceCertif();
@@ -44,6 +48,15 @@ public class AdminCertifsController implements Initializable {
         setupColumns();
         loadCertifications();
         setupSelectionModel();
+        updateBtn.disableProperty().bind(tableCertifications.getSelectionModel().selectedItemProperty().isNull());
+        tableCertifications.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection == null) {
+                addBtn.setDisable(false);  // Enable the add button when no row is selected
+            } else {
+                addBtn.setDisable(true);   // Disable the add button when a row is selected
+            }
+        });
+
     }
 
     private void setupColumns() {
@@ -170,6 +183,7 @@ public class AdminCertifsController implements Initializable {
         durationFld.clear();
         levelFld.clear();
         badgePreview.setImage(null);
+        tableCertifications.getSelectionModel().clearSelection();
     }
 
     private void showConfirmation(String message) {
