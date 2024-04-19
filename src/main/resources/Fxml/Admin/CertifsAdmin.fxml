@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController" style="-fx-background-color: #ffffff;">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController">
     <children>
         <Text layoutX="695.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certification Management" wrappingWidth="200.0">
             <font>
@@ -22,14 +27,19 @@
                 <TableColumn fx:id="colLevel" prefWidth="100.0" text="Level" />
             </columns>
         </TableView>
-        <TextField fx:id="nameFld" layoutX="764.0" layoutY="131.0" prefHeight="26.0" prefWidth="211.0" promptText="Certification Name" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
-        <TextField fx:id="descriptionFld" layoutX="764.0" layoutY="180.0" prefHeight="26.0" prefWidth="211.0" promptText="Description" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
-        <TextField fx:id="durationFld" layoutX="1042.0" layoutY="118.0" prefHeight="26.0" prefWidth="211.0" promptText="Duration (in hours)" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
-        <TextField fx:id="levelFld" layoutX="764.0" layoutY="229.0" prefHeight="26.0" prefWidth="211.0" promptText="Level" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;"/>
-        <ImageView fx:id="badgePreview" fitHeight="200.0" fitWidth="200.0" layoutX="1012.0" layoutY="142.0" preserveRatio="true" style="-fx-border-color: #bdc3c7; -fx-border-width: 2;"/>
-        <Button fx:id="uploadBadgeBtn" layoutX="1057.0" layoutY="229.0" mnemonicParsing="false" onAction="#uploadBadge" text="Upload Badge" prefWidth="300" style="-fx-background-color: #3498db; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
-        <Button fx:id="addBtn" layoutX="1057.0" layoutY="279.0" mnemonicParsing="false" onAction="#addCertif" prefHeight="34.0" prefWidth="91.0" text="Add" style="-fx-background-color: #2ecc71; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
-        <Button fx:id="deleteBtn" layoutX="764.0" layoutY="279.0" mnemonicParsing="false" onAction="#deleteCertif" prefHeight="34.0" prefWidth="91.0" text="Delete" style="-fx-background-color: #e74c3c; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
-        <Button fx:id="updateBtn" layoutX="911.0" layoutY="279.0" mnemonicParsing="false" onAction="#updateCertif" prefHeight="34.0" prefWidth="91.0" text="Update" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff; -fx-border-radius: 5;"/>
+        <TextField fx:id="nameFld" layoutX="764.0" layoutY="175.0" prefHeight="26.0" prefWidth="211.0" promptText="Certification Name" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+        <TextField fx:id="descriptionFld" layoutX="763.0" layoutY="242.0" prefHeight="26.0" prefWidth="211.0" promptText="Description" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+        <TextField fx:id="durationFld" layoutX="764.0" layoutY="354.0" prefHeight="26.0" prefWidth="211.0" promptText="Duration (in hours)" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+        <TextField fx:id="levelFld" layoutX="763.0" layoutY="300.0" prefHeight="26.0" prefWidth="211.0" promptText="Level" style="-fx-prompt-text-fill: #95a5a6; -fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+        <ImageView fx:id="badgePreview" fitHeight="200.0" fitWidth="200.0" layoutX="1106.0" layoutY="127.0" preserveRatio="true" style="-fx-border-color: #bdc3c7; -fx-border-width: 2;" />
+        <Button fx:id="uploadBadgeBtn" layoutX="1047.0" layoutY="357.0" mnemonicParsing="false" onAction="#uploadBadge" prefWidth="300" style="-fx-background-color: #3498db; -fx-text-fill: #ffffff; -fx-border-radius: 5;" text="Upload Badge" />
+        <Button fx:id="addBtn" layoutX="1106.0" layoutY="427.0" mnemonicParsing="false" onAction="#addCertif" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #2ecc71; -fx-text-fill: #ffffff; -fx-border-radius: 5;" text="Add" />
+        <Button fx:id="deleteBtn" layoutX="764.0" layoutY="427.0" mnemonicParsing="false" onAction="#deleteCertif" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #e74c3c; -fx-text-fill: #ffffff; -fx-border-radius: 5;" text="Delete" />
+        <Button fx:id="updateBtn" layoutX="936.0" layoutY="427.0" mnemonicParsing="false" onAction="#updateCertif" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #f39c12; -fx-text-fill: #ffffff; -fx-border-radius: 5;" text="Update" />
+        <Text fx:id="name_error_txt" layoutX="844.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red"/>
+        <Text fx:id="description_error_txt" layoutX="844.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red" />
+        <Text fx:id="lvl_error_txt" layoutX="844.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red"/>
+        <Text fx:id="duree_error_txt" layoutX="844.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0"  fill="red"/>
+        <Text fx:id="image_error_txt" layoutX="1199.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" fill="red" />
     </children>
 </AnchorPane>

@@ -8,10 +8,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import java.io.File;
 import java.net.URL;
@@ -23,9 +21,16 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import com.alphadev.artemisjvfx.services.ControleDeSaisie;
+import javafx.scene.text.Text;
 
-public class AdminCertifsController implements Initializable {
+public class AdminCertifsController implements Initializable  {
     public static User user = null;
+   @FXML public Text name_error_txt ;
+    @FXML public Text description_error_txt ;
+    @FXML public Text lvl_error_txt ;
+    @FXML public Text duree_error_txt ;
+    @FXML public Text image_error_txt ;
 
     @FXML public Button updateBtn;
     @FXML public TextField nameFld;
@@ -42,6 +47,7 @@ public class AdminCertifsController implements Initializable {
 
     public String badgePath;
     public final ServiceCertif serviceCertif = new ServiceCertif();
+    ControleDeSaisie controleDeSaisie = new ControleDeSaisie();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -123,13 +129,47 @@ public class AdminCertifsController implements Initializable {
 
     @FXML
     public void addCertif() {
-        Certif newCertif = new Certif(nameFld.getText(), badgePath, descriptionFld.getText(), Integer.parseInt(durationFld.getText()), Integer.parseInt(levelFld.getText()));
-        serviceCertif.addCertif(newCertif);
+        boolean inputValid = true;
+        clearErrorMessages(); // Clear previous error messages
 
-        clearForm();
-        loadCertifications();
-        showConfirmation("Certification added successfully!");
+        if (!controleDeSaisie.checkName(nameFld.getText())) {
+            name_error_txt.setText("Invalid name format.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkDescription(descriptionFld.getText())) {
+            description_error_txt.setText("Description cannot be empty.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkDuration(durationFld.getText())) {
+            duree_error_txt.setText("Invalid duration. Enter a positive number.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkLevel(levelFld.getText())) {
+            lvl_error_txt.setText("Level must be between 1 and 10.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkImage(badgePath)) {
+            image_error_txt.setText("Invalid image file.");
+            inputValid = false;
+        }
+
+        if (inputValid) {
+            Certif newCertif = new Certif(nameFld.getText(), badgePath, descriptionFld.getText(), Integer.parseInt(durationFld.getText()), Integer.parseInt(levelFld.getText()));
+            serviceCertif.addCertif(newCertif);
+            clearForm();
+            loadCertifications();
+            showConfirmation("Certification added successfully!");
+        }
     }
+
+    private void clearErrorMessages() {
+        name_error_txt.setText("");
+        description_error_txt.setText("");
+        duree_error_txt.setText("");
+        lvl_error_txt.setText("");
+        image_error_txt.setText("");
+    }
+
 
     @FXML
     public void updateCertif() {
@@ -138,6 +178,31 @@ public class AdminCertifsController implements Initializable {
             showAlert("No certification selected to update.");
             return;
         }
+        boolean inputValid = true;
+        clearErrorMessages(); // Clear previous error messages
+
+        if (!controleDeSaisie.checkName(nameFld.getText())) {
+            name_error_txt.setText("Invalid name format.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkDescription(descriptionFld.getText())) {
+            description_error_txt.setText("Description cannot be empty.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkDuration(durationFld.getText())) {
+            duree_error_txt.setText("Invalid duration. Enter a positive number.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkLevel(levelFld.getText())) {
+            lvl_error_txt.setText("Level must be between 1 and 10.");
+            inputValid = false;
+        }
+        if (!controleDeSaisie.checkImage(badgePath)) {
+            image_error_txt.setText("Invalid image file.");
+            inputValid = false;
+        }
+
+        if (inputValid) {
 
         Certif updatedCertif = new Certif(selectedCertif.getId(), nameFld.getText(), badgePath, descriptionFld.getText(), Integer.parseInt(durationFld.getText()), Integer.parseInt(levelFld.getText()));
         serviceCertif.updateCertif(updatedCertif);
@@ -145,6 +210,7 @@ public class AdminCertifsController implements Initializable {
         clearForm();
         loadCertifications();
         showConfirmation("Certification updated successfully!");
+        }
     }
 
     @FXML

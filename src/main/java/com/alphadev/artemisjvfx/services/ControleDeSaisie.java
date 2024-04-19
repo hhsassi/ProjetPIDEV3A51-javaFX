@@ -38,6 +38,38 @@ public class ControleDeSaisie {
 
     }
 
+    //ahmed
+    public boolean checkName(String name) {
+        return name.matches("[a-zA-Z\\s]+") && name.length() >= 2;
+    }
+
+    public boolean checkDescription(String description) {
+        return !description.isEmpty(); // Basic check, can be extended based on specific needs
+    }
+
+    public boolean checkDuration(String duration) {
+        try {
+            int dur = Integer.parseInt(duration);
+            return dur > 0; // Duration should be positive
+        } catch (NumberFormatException e) {
+            return false; // Not a valid integer
+        }
+    }
+
+    public boolean checkLevel(String level) {
+        try {
+            int lvl = Integer.parseInt(level);
+            return lvl >= 1 && lvl <= 10; // Assuming levels are between 1 and 10
+        } catch (NumberFormatException e) {
+            return false; // Not a valid integer
+        }
+    }
+
+    public boolean checkImage(String imagePath) {
+        // Simple check to see if it's not empty and has a proper image file extension
+        return imagePath != null && imagePath.matches(".*(\\.png|\\.jpg|\\.jpeg|\\.gif)$");
+    }
+
 
 
 
