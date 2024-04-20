@@ -251,7 +251,13 @@ public class AdminCoursesController implements Initializable {
             selectedCourse.setLevel(levelFld.getText());
             selectedCourse.setFile(filePath); // Assuming you want to update the file path as well
             selectedCourse.setCertificationId(certificationMap.get(certificationComboBox.getValue()));
-
+            if (!validateForm()) {
+                showAlert("Error", "Please fill in all fields .", Alert.AlertType.ERROR);
+                return;
+            }
+            if (!validateCourseForm()) {
+                return; // Exit if validation fails
+            }
             serviceCourse.updateCourse(selectedCourse);  // You need to implement this method in your service
             showConfirmation("Course updated successfully");
             loadCourses();
