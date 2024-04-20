@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="338d4b74-97b2-4294-9f42-df3b55bc0a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCoursesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/models/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/services/ServiceCourse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CoursAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Client/CertifsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Client/CertifsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/services/ControleDeSaisie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/services/ControleDeSaisie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Client/Certifs.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Client/Certifs.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/badges/CIN 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/badges/CIN 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/badges/League of Legends (TM) Client 12_04_2024 22_19_56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/badges/meh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/badges/mehhh.png" beforeDir="false" />
-    </list>
+    <list default="true" id="338d4b74-97b2-4294-9f42-df3b55bc0a6e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,7 +146,7 @@
       <workItem from="1713515599663" duration="6361000" />
       <workItem from="1713523942893" duration="819000" />
       <workItem from="1713531824493" duration="1007000" />
-      <workItem from="1713541664540" duration="21755000" />
+      <workItem from="1713541664540" duration="22077000" />
     </task>
     <servers />
   </component>
