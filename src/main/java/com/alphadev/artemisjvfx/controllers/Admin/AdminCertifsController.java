@@ -6,8 +6,13 @@ import com.alphadev.artemisjvfx.services.ServiceCertif;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
@@ -23,6 +28,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import com.alphadev.artemisjvfx.services.ControleDeSaisie;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class AdminCertifsController implements Initializable  {
     public static User user = null;
@@ -31,6 +37,7 @@ public class AdminCertifsController implements Initializable  {
     @FXML public Text lvl_error_txt ;
     @FXML public Text duree_error_txt ;
     @FXML public Text image_error_txt ;
+    @FXML public Button coursBtn;
 
     @FXML public Button updateBtn;
     @FXML public TextField nameFld;
@@ -277,4 +284,24 @@ public class AdminCertifsController implements Initializable  {
         ObservableList<Certif> data = FXCollections.observableArrayList(certifs);
         tableCertifications.setItems(data);
     }
+
+
+        public void goToCours(ActionEvent actionEvent) {
+            try {
+                // Load the FXML file
+                Parent coursPage = FXMLLoader.load(getClass().getResource("/Fxml/Admin/CoursAdmin.fxml"));
+
+                // Get the current stage (window)
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+                // Set the scene to your new layout
+                stage.setScene(new Scene(coursPage));
+
+                // Show the new stage
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
 }

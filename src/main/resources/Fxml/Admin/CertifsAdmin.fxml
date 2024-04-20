@@ -37,5 +37,6 @@
         <Text fx:id="lvl_error_txt" fill="red" layoutX="844.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" />
         <Text fx:id="duree_error_txt" fill="red" layoutX="844.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" />
         <Text fx:id="image_error_txt" fill="red" layoutX="1199.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button fx:id="coursBtn" layoutX="1306.0" layoutY="49.0" mnemonicParsing="false" text="cours magamenet" onAction="#goToCours" />
     </children>
 </AnchorPane>

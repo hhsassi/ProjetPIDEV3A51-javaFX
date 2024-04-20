@@ -69,7 +69,29 @@ public class ControleDeSaisie {
         // Simple check to see if it's not empty and has a proper image file extension
         return imagePath != null && imagePath.matches(".*(\\.png|\\.jpg|\\.jpeg|\\.gif)$");
     }
+    public static boolean isValidTitle(String title) {
+        // Assuming title should be non-empty and can include spaces and basic punctuation
+        return title.matches("[a-zA-Z\\s,.']+") && title.length() >= 2;
+    }
 
+    public static boolean isValidDescription(String description) {
+        // Description can be more lenient, but not empty
+        return !description.isEmpty() && description.length() >= 10; // Assuming descriptions should be at least 10 characters
+    }
+
+    public static boolean isValidLevel(String level) {
+        try {
+            int lvl = Integer.parseInt(level);
+            return lvl >= 1 && lvl <= 10; // Validating level within a realistic range
+        } catch (NumberFormatException e) {
+            return false; // Not a valid integer
+        }
+    }
+
+    public static boolean isValidFilePath(String filePath) {
+        // File path validation to ensure it is not empty and has a proper image file extension
+        return filePath != null && filePath.matches(".*(\\.pdf|\\.txt)$");
+    }
 
 
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCoursesController">
+    <children>
+        <Text layoutX="28.0" layoutY="43.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #333;" text="Course Management" wrappingWidth="300.0">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+        <TableView fx:id="tableCourses" layoutX="28.0" layoutY="75.0" prefHeight="400.0" prefWidth="1400.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc;">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colTitle" prefWidth="219.0" text="Title" />
+                <TableColumn fx:id="colDescription" prefWidth="324.0" text="Description" />
+                <TableColumn fx:id="colLevel" prefWidth="95.0" text="Level" />
+                <TableColumn fx:id="colFile" prefWidth="404.0" text="File" />
+                <TableColumn fx:id="colCertificationName" prefWidth="215.0" text="Certification Name" />
+            </columns>
+        </TableView>
+        <VBox layoutX="28.0" layoutY="480.0" prefWidth="1400.0" spacing="10">
+            <children>
+                <HBox spacing="15">
+                    <children>
+                        <TextField fx:id="titleFld" prefWidth="300.0" promptText="Course Title" style="-fx-prompt-text-fill: #aaa; -fx-font-size: 14px;" />
+                        <TextField fx:id="descriptionFld" prefWidth="300.0" promptText="Description" style="-fx-prompt-text-fill: #aaa; -fx-font-size: 14px;" />
+                        <TextField fx:id="levelFld" prefWidth="200.0" promptText="Level" style="-fx-prompt-text-fill: #aaa; -fx-font-size: 14px;" />
+                        <TextField fx:id="fileFld" prefWidth="300.0" promptText="File Path" style="-fx-prompt-text-fill: #aaa; -fx-font-size: 14px;" />
+                        <ComboBox fx:id="certificationComboBox" prefWidth="300.0" style="-fx-font-size: 14px;">
+                            <items>
+                                <!-- Items loaded dynamically -->
+                            </items>
+                        </ComboBox>
+                    </children>
+                </HBox>
+                <HBox spacing="10">
+                    <children>
+                        <Button fx:id="uploadFileBtn" onAction="#uploadFile" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10;" text="Upload File" />
+                        <Button fx:id="addBtn" onAction="#addCourse" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10;" text="Add" />
+                        <Button fx:id="updateBtn" onAction="#updateCourse" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10;" text="Update" />
+                        <Button fx:id="deleteBtn" onAction="#deleteCourse" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10;" text="Delete" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Text fx:id="title_error_txt" fill="red" />
+                        <Text fx:id="description_error_txt" fill="red" />
+                        <Text fx:id="level_error_txt" fill="red" />
+                        <Text fx:id="file_error_txt" fill="red" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+      <Button layoutX="8.0" layoutY="5.0" mnemonicParsing="false" text="back" onAction="#gotoCertifs" />
+
+    </children>
+</AnchorPane>
