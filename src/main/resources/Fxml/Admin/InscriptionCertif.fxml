@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane style="-fx-background-color: #f8f8f8;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminInscriptionCertifController">
+    <VBox layoutX="20" layoutY="20" spacing="20" style="-fx-padding: 20; -fx-background-radius: 5; -fx-background-color: #ffffff; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);">
+      <Button fx:id="backBtn" mnemonicParsing="false" text="go back" onAction="#gotoCertification" />
+        <TextField fx:id="userAddressField" prefWidth="200" promptText="User Address" style="-fx-prompt-text-fill: derive(-fx-control-inner-background, -30%); -fx-padding: 10;">
+        </TextField>
+        <ComboBox fx:id="certificationComboBox" prefWidth="200" style="-fx-padding: 5;">
+        </ComboBox>
+        <HBox spacing="10" style="-fx-alignment: center;">
+            <Button onAction="#handleAddEnrollment" style="-fx-background-color: #5cb85c; -fx-text-fill: white; -fx-padding: 10 20; -fx-border-radius: 5;" text="Add Enrollment">
+            </Button>
+            <Button fx:id="updateButton" onAction="#handleUpdateEnrollment" style="-fx-background-color: #f0ad4e; -fx-text-fill: white; -fx-padding: 10 20; -fx-border-radius: 5;" text="Update Enrollment">
+            </Button>
+            <Button fx:id="deleteButton" onAction="#handleDeleteEnrollment" style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-padding: 10 20; -fx-border-radius: 5;" text="Delete Enrollment">
+            </Button>
+        </HBox>
+        <TableView fx:id="enrollmentsTable" prefHeight="200" prefWidth="400" style="-fx-background-color: #f9f9f9; -fx-border-color: #e2e2e2;">
+            <columns>
+                <TableColumn fx:id="colUserEmail" prefWidth="150.0" style="-fx-font-size: 14px;" text="User Email">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colCertificationName" prefWidth="250.0" style="-fx-font-size: 14px;" text="Certification Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="certificationName" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

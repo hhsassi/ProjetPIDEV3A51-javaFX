@@ -231,13 +231,19 @@ public class AdminCertifsController implements Initializable  {
             return;
         }
 
-        // Confirmation dialog
+        // Check if the certification can be safely deleted
+        if (!serviceCertif.canDeleteCertif(selectedCertif.getId())) {
+            showAlert("Cannot delete certification as it is linked to one or more courses.");
+            return;
+        }
+
+        // Confirmation dialog to make sure the user wants to delete the certification
         if (showConfirmationDialog("Are you sure you want to delete this certification?")) {
             serviceCertif.deleteCertif(selectedCertif.getId());
             loadCertifications(); // Reload the list to reflect the deletion
             showConfirmation("Certification deleted successfully!");
             clearForm();
-            clearErrorMessages();// Clear the form fields
+            clearErrorMessages(); // Clear the form fields and any error messages
         }
     }
     private boolean showConfirmationDialog(String message) {
@@ -304,4 +310,21 @@ public class AdminCertifsController implements Initializable  {
             }
         }
 
+    public void goToInscription(ActionEvent actionEvent) {
+        try {
+            // Load the FXML file
+            Parent coursPage = FXMLLoader.load(getClass().getResource("/Fxml/Admin/InscriptionCertif.fxml"));
+
+            // Get the current stage (window)
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+            // Set the scene to your new layout
+            stage.setScene(new Scene(coursPage));
+
+            // Show the new stage
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

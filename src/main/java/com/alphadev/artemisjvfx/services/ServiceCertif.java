@@ -70,7 +70,26 @@ public class ServiceCertif {
             System.out.println("Error occurred while updating certification: " + e.getMessage());
         }
     }
+    public boolean canDeleteCertif(int certifId) {
+        String query = "SELECT COUNT(*) FROM cours WHERE certification_id = ?";
+        try (PreparedStatement pst = cnx.prepareStatement(query)) {
+            pst.setInt(1, certifId);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1) == 0; // true if no courses linked, false otherwise
+            }
+        } catch (SQLException e) {
+            System.out.println("Error checking for dependent courses: " + e.getMessage());
+        }
+        return false; // Assume cannot delete if error occurs
+    }
+
     public void deleteCertif(int certifId) {
+        if (!canDeleteCertif(certifId)) {
+            System.out.println("Cannot delete certification as it is linked to existing courses.");
+            return; // Stop the deletion process
+        }
+
         String query = "DELETE FROM certification WHERE id = ?";
         try (PreparedStatement pst = cnx.prepareStatement(query)) {
             pst.setInt(1, certifId);
@@ -78,12 +97,13 @@ public class ServiceCertif {
             if (rowsAffected > 0) {
                 System.out.println("Certification deleted successfully");
             } else {
-                System.out.println("Failed to delete certification");
+                System.out.println("No such certification exists or failed to delete certification.");
             }
         } catch (SQLException e) {
             System.out.println("Error occurred while deleting certification: " + e.getMessage());
         }
     }
+
 
 
 }
