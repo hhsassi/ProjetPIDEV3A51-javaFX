@@ -1,0 +1,74 @@
+.container{
+    -fx-background-color: #F3F3F3;
+
+}
+
+.profile-container{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 48px;
+    -fx-border-radius: 48px;
+    -fx-border-color: #D6CFCF;
+}
+
+.profile-background{
+
+    -fx-background-radius: 48px;
+    -fx-border-radius: 48px;
+
+}
+.profile-image-btn{
+    -fx-background-radius: 60px;
+    -fx-border-radius: 60px;
+    -fx-background-color: #09C9C9;
+}
+.background-image-btn{
+    -fx-background-radius: 60px;
+    -fx-border-radius: 60px;
+    -fx-background-color: white;
+}
+
+.image-view {
+    -fx-border-radius: 48px;
+    -fx-min-width: 1421px;
+    -fx-max-width: 1421px;
+    -fx-min-height: 221px;
+    -fx-max-height: 221px;
+}
+
+/* update  button */
+.update-button {
+    -fx-background-color: #006eff; /* Green */
+    -fx-text-fill: #ffffff;
+
+
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+}
+
+.update-button:hover {
+    -fx-background-color: #004ba8; /* Darker Green */
+}
+
+.update-button:pressed {
+    -fx-background-color: #0057c9; /* Even Darker Green */
+}
+/* Delete  button */
+.delete-button {
+    -fx-background-color: #d20000; /* Green */
+    -fx-text-fill: #ffffff;
+
+
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+}
+
+.delete-button:hover {
+    -fx-background-color: #d20000; /* Darker Green */
+}
+
+.delete-button:pressed {
+    -fx-background-color: #d20000; /* Even Darker Green */
+}
+

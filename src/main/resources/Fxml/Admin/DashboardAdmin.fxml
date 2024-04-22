@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminDashboardController">
+   <Text layoutX="695.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Admin" wrappingWidth="66.9366455078125" />
+   <TableView fx:id="user_admin_tableView" layoutX="58.0" layoutY="49.0" prefHeight="681.0" prefWidth="608.0" />
+   <Line endX="-86.0" endY="413.20001220703125" layoutX="810.0" layoutY="318.0" startX="-86.0" startY="-266.79998779296875" />
+   <Text layoutX="749.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New User">
+      <font>
+         <Font size="28.0" />
+      </font>
+   </Text>
+   <Text layoutX="762.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" wrappingWidth="39.9078369140625">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <Text layoutX="1057.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Nameme" wrappingWidth="146.307861328125">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <Text layoutX="762.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" wrappingWidth="66.9366455078125">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <Text layoutX="1057.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="66.9366455078125">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <Text layoutX="762.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cin" wrappingWidth="66.9366455078125">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <Text layoutX="1055.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" wrappingWidth="136.53662109375">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <Text layoutX="760.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" wrappingWidth="136.53662109375">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <Text layoutX="1055.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dob" wrappingWidth="136.53662109375">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Text>
+   <TextField fx:id="name_admin_fld" layoutX="764.0" layoutY="131.0" prefHeight="26.0" prefWidth="211.0" />
+   <TextField fx:id="lastName_admin_fld" layoutX="1057.0" layoutY="131.0" prefHeight="26.0" prefWidth="211.0" />
+   <TextField fx:id="email_admin_fldd" layoutX="764.0" layoutY="232.0" prefHeight="26.0" prefWidth="211.0" />
+   <TextField fx:id="password_admin_fld" layoutX="1057.0" layoutY="232.0" prefHeight="26.0" prefWidth="211.0" />
+   <TextField fx:id="cin_admin_fld" layoutX="764.0" layoutY="334.0" prefHeight="26.0" prefWidth="211.0" />
+   <TextField fx:id="phoneNumber_admin_fld" layoutX="1057.0" layoutY="334.0" prefHeight="26.0" prefWidth="211.0" />
+   <TextField fx:id="adress_admin_fld" layoutX="764.0" layoutY="419.0" prefHeight="26.0" prefWidth="211.0" />
+   <Button fx:id="register_admin_btn" layoutX="1178.0" layoutY="470.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="91.0" styleClass="Register-button" stylesheets="@../Styles/login.css" text="Register" />
+   <TextField fx:id="tableView_admin_fld" layoutX="158.0" layoutY="740.0" prefHeight="26.0" prefWidth="315.0" />
+   <Button fx:id="delete_admin_btn" layoutX="488.0" layoutY="741.0" mnemonicParsing="false" styleClass="sign-up-button" stylesheets="@../Styles/login.css" text="Delete">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="search_admin_btn" layoutX="549.0" layoutY="740.0" mnemonicParsing="false" styleClass="sign-up-button" stylesheets="@../Styles/login.css" text="Search" />
+   <Button fx:id="refresh_admin_btn" layoutX="610.0" layoutY="741.0" mnemonicParsing="false" styleClass="sign-up-button" stylesheets="@../Styles/login.css" text="Refresh" />
+   <Text fx:id="email_error_txt" fill="RED" layoutX="770.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+   <Text fx:id="name_error_txt" fill="RED" layoutX="770.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+   <Text fx:id="lastName_error_txt" fill="RED" layoutX="1070.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+   <Text fx:id="password_error_txt" fill="RED" layoutX="1060.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+   <Text fx:id="phoneNumber_error_txt" fill="RED" layoutX="1060.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+   <Text fx:id="Adress_error_txt" fill="RED" layoutX="770.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+   <DatePicker fx:id="dob_admin_fld" layoutX="1055.0" layoutY="419.0" />
+   <Text fx:id="cin_error_txt" fill="RED" layoutX="760.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+</AnchorPane>

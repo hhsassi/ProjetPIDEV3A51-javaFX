@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCertifsController">
+   <children>
+      <Text layoutX="717.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certifs Admin" wrappingWidth="117.337158203125" />
+   </children>
+</AnchorPane>

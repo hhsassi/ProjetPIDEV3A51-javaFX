@@ -1,0 +1,98 @@
+.pane{
+    -fx-background-color: #FFFFFF ;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+. send-button {
+    -fx-background-color: #006eff; /* Green */
+    -fx-text-fill: white;
+    -fx-font-size: 32px;
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-cursor: hand;
+}
+
+. send-button:hover {
+    -fx-background-color: #00069b; /* Darker Green */
+}
+
+. send-button:pressed {
+    -fx-background-color: #000154; /* Even Darker Green */
+}
+
+/* input fields */
+
+.input-field {
+    -fx-background-color: #fafafa; /* Light Gray */
+    -fx-border-color: #d2d2d2; /* Light Gray */
+    -fx-border-width: 1px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+.input-field:focused  {
+    -fx-border-color: #007bff; /* Blue */
+    -fx-background-color: white;
+}
+
+.input-field:hover {
+    -fx-background-color: #f6f6f6; /* Lighter Gray */
+}
+/* --------- */
+
+
+/* style.css
+.chart-line-symbol {
+    -fx-background-color: transparent;
+}
+
+.chart-line-symbol-line {
+    -fx-stroke: #4CAF50; /* Change line color as needed
+}
+
+.chart-series-line {
+    -fx-stroke: #4CAF50; /* Change line color as needed
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: #e7e7e7; /* Change plot background color as needed
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #37474F; /* Change horizontal grid line color as needed
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #37474F; /* Change vertical grid line color as needed
+}
+
+.chart-axis {
+    -fx-tick-mark-visible: false;
+    -fx-font-size: 11px;
+    -fx-label-padding: 5px;
+    -fx-label-text-fill: #B0BEC5; /* Change axis label color as needed
+}
+
+.chart-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFFFFF; /* Change title text color as needed
+}
+
+.chart-legend-item-symbol {
+    -fx-background-radius: 0;
+    -fx-border-color: #4CAF50; /* Change legend symbol border color as needed
+    -fx-border-radius: 0;
+}
+
+.chart-legend-item {
+    -fx-text-fill: #FFFFFF; /* Change legend item text color as needed
+}
+*/

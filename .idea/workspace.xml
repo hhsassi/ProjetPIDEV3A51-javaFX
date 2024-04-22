@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="338d4b74-97b2-4294-9f42-df3b55bc0a6e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2dyQ4TptKxGwyq8pOLwoPjcSJ1q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Hassen/Desktop/webcam-capture-0.3.12-dist/libs/slf4j-api-1.7.2.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.30804598&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.css.dialects&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Hassen\Desktop\ProjetPIDEV3A51-javaFX-main\src\main\java" />
+      <recent name="C:\Users\Hassen\Desktop\ProjetPIDEV3A51-javaFX-main\src" />
+      <recent name="C:\Users\Hassen\Desktop\ArtemisJvfx\src\main\resources\Fxml\Styles\Client\Dashboard" />
+      <recent name="C:\Users\Hassen\Desktop\ArtemisJvfx\src\main\resources\Fxml\Client" />
+      <recent name="C:\Users\Hassen\Desktop\ArtemisJvfx\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.alphadev.artemisjvfx" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.alphadev.artemisjvfx.App" />
+      <module name="ArtemisJvfx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.alphadev.artemisjvfx.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="338d4b74-97b2-4294-9f42-df3b55bc0a6e" name="Changes" comment="" />
+      <created>1710977648686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710977648686</updated>
+      <workItem from="1710977649806" duration="5414000" />
+      <workItem from="1711016669097" duration="14844000" />
+      <workItem from="1711134336101" duration="8479000" />
+      <workItem from="1711187458904" duration="7162000" />
+      <workItem from="1711198699301" duration="7534000" />
+      <workItem from="1711235370499" duration="604000" />
+      <workItem from="1711295943077" duration="121000" />
+      <workItem from="1711391803537" duration="3199000" />
+      <workItem from="1711451687151" duration="18945000" />
+      <workItem from="1711533608130" duration="14344000" />
+      <workItem from="1711556308053" duration="5434000" />
+      <workItem from="1711568082653" duration="46000" />
+      <workItem from="1711571715918" duration="15989000" />
+      <workItem from="1711620393994" duration="2485000" />
+      <workItem from="1711662751593" duration="12171000" />
+      <workItem from="1713117380632" duration="94000" />
+      <workItem from="1713121777757" duration="748000" />
+      <workItem from="1713168671280" duration="3935000" />
+      <workItem from="1713210631076" duration="5434000" />
+      <workItem from="1713219453433" duration="9653000" />
+      <workItem from="1713255159404" duration="2029000" />
+      <workItem from="1713517970242" duration="2174000" />
+      <workItem from="1713721216634" duration="5546000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

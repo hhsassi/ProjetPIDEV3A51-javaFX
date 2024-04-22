@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Client.DashboardController">
+   <Pane layoutX="25.0" layoutY="35.0" prefHeight="432.0" prefWidth="1403.0" styleClass="pane">
+      <stylesheets>
+
+         <URL value="@../Styles/Client/Dashboard/Dashboard.css" />
+      </stylesheets>
+      <Label layoutX="497.0" layoutY="58.0" prefHeight="58.0" prefWidth="289.0" text="Quick Transfer" textFill="#5e5c5c">
+         <font>
+            <Font name="Nirmala UI" size="34.0" />
+         </font>
+      </Label>
+      <Button fx:id="send_r_btn" layoutX="508.0" layoutY="338.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="368.0" styleClass="send-button" stylesheets="@../Styles/Client/Dashboard/Dashboard.css" text="Send">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+      <TextField fx:id="amnt_fld" layoutX="516.0" layoutY="272.0" prefHeight="49.0" prefWidth="355.0" styleClass="input-field">
+         <effect>
+            <DropShadow height="35.66" radius="13.665">
+               <color>
+                  <Color red="0.5657894611358643" green="0.5605506896972656" blue="0.5605506896972656" opacity="0.15000000596046448" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Microsoft YaHei UI Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Text fill="#6f6f6f" layoutX="515.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter amount" wrappingWidth="187.19999999999982">
+         <font>
+            <Font name="Nirmala UI" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="rib_r_fld" layoutX="518.0" layoutY="170.0" prefHeight="49.0" prefWidth="361.0" styleClass="input-field">
+         <effect>
+            <DropShadow height="48.85" radius="25.755000000000003" width="56.17">
+               <color>
+                  <Color red="0.5" green="0.5" blue="0.5" opacity="0.1899999976158142" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Microsoft YaHei UI Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Text fill="#6f6f6f" layoutX="509.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RIB of the reciever" wrappingWidth="241.60002441406232">
+         <font>
+            <Font name="Nirmala UI" size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="user_name_lbl" layoutX="1202.0" layoutY="7.0" prefHeight="58.0" prefWidth="118.0" text="Elon Musk">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Circle fill="DODGERBLUE" layoutX="1356.0" layoutY="31.0" radius="26.0" stroke="#a4a4a4" strokeType="INSIDE" />
+      <Label layoutX="39.0" layoutY="53.0" prefHeight="58.0" prefWidth="236.0" text="My Accounts" textFill="#5e5c5c">
+         <font>
+            <Font name="Nirmala UI" size="34.0" />
+         </font>
+      </Label>
+      <HBox layoutX="32.0" layoutY="108.0" prefHeight="302.0" prefWidth="465.0">
+         <AnchorPane prefHeight="245.0" prefWidth="401.0">
+            <effect>
+               <DropShadow height="60.77" radius="39.8275" width="100.54">
+                  <color>
+                     <Color red="0.3700000047683716" green="0.3700000047683716" blue="0.3700000047683716" opacity="0.5558966994285583" />
+                  </color>
+               </DropShadow>
+            </effect>
+            <ImageView fitHeight="302.0" fitWidth="485.0" layoutX="25.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/credit_card.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="balance_lbl" layoutX="82.0" layoutY="115.0" prefHeight="59.0" prefWidth="211.0" text="350000 $" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="41.0" />
+               </font>
+            </Label>
+            <Label fx:id="rib_lbl" layoutX="82.0" layoutY="183.0" prefHeight="59.0" prefWidth="300.0" text="**** **** **** **** 4251" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="29.0" />
+               </font>
+            </Label>
+         </AnchorPane>
+      </HBox>
+      <LineChart layoutX="895.0" layoutY="111.0" prefHeight="304.0" prefWidth="500.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label layoutX="906.0" layoutY="57.0" prefHeight="58.0" prefWidth="289.0" text="Income" textFill="#5e5c5c">
+         <font>
+            <Font name="Nirmala UI" size="34.0" />
+         </font>
+      </Label>
+   </Pane>
+   <Pane layoutX="31.0" layoutY="483.0" prefHeight="368.0" prefWidth="1396.0" styleClass="pane">
+      <stylesheets>
+
+         <URL value="@../Styles/Client/Dashboard/Dashboard.css" />
+      </stylesheets>
+      <children>
+         <ListView fx:id="transaction_listV" layoutX="39.0" layoutY="88.0" prefHeight="243.0" prefWidth="629.0" />
+         <ListView fx:id="stocks_listV" layoutX="739.0" layoutY="91.0" prefHeight="244.0" prefWidth="597.0" />
+         <Label layoutX="743.0" layoutY="29.0" prefHeight="58.0" prefWidth="326.0" text="Stocks Protfolio">
+            <font>
+               <Font name="Nirmala UI Bold" size="34.0" />
+            </font>
+         </Label>
+         <Label layoutX="24.0" layoutY="22.0" prefHeight="58.0" prefWidth="236.0" text="Transactions" textFill="#5e5c5c">
+            <font>
+               <Font name="Nirmala UI Bold" size="38.0" />
+            </font>
+         </Label>
+      </children>
+   </Pane>
+</AnchorPane>

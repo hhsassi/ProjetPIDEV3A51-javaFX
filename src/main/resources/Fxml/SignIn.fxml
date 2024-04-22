@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="879.0" prefWidth="1555.0" stylesheets="@Styles/login.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.SignInController">
+   <children>
+      <ImageView fitHeight="879.0" fitWidth="1555.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/signUp.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="name_signIn_field" layoutX="887.0" layoutY="263.0" prefHeight="25.0" prefWidth="209.0" styleClass="input-field" />
+      <TextField fx:id="lastName_signIn_field" layoutX="1168.0" layoutY="264.0" prefHeight="25.0" prefWidth="209.0" styleClass="input-field" />
+      <TextField fx:id="email_signIn_field" layoutX="887.0" layoutY="373.0" prefHeight="25.0" prefWidth="209.0" styleClass="input-field" />
+      <TextField fx:id="password_signIn_field" layoutX="1168.0" layoutY="374.0" prefHeight="25.0" prefWidth="209.0" styleClass="input-field" />
+      <TextField fx:id="cin_signIn_field" layoutX="887.0" layoutY="483.0" prefHeight="25.0" prefWidth="209.0" styleClass="input-field" />
+      <TextField fx:id="adress_signIn_field" layoutX="1168.0" layoutY="484.0" prefHeight="25.0" prefWidth="209.0" styleClass="input-field" />
+      <TextField fx:id="phoneNumber_signIn_field" layoutX="887.0" layoutY="603.0" prefHeight="25.0" prefWidth="209.0" styleClass="input-field" />
+      <DatePicker fx:id="dob_singIn_field" layoutX="1169.0" layoutY="603.0" prefHeight="32.0" prefWidth="206.0" />
+      <Button fx:id="register_signIn_btn" layoutX="1283.0" layoutY="665.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="96.0" styleClass="Register-button" stylesheets="@Styles/login.css" text="REGISTER">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text fx:id="email_error_txt" fill="RED" layoutX="935.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        " wrappingWidth="183.89691162109352" />
+      <Text fx:id="phoneNumber_error_txt" fill="RED" layoutX="888.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        " wrappingWidth="206.39999999999986" />
+      <Text fx:id="name_error_txt" fill="RED" layoutX="944.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        " wrappingWidth="195.09686279296875" />
+      <Text fx:id="lastName_error_txt" fill="RED" layoutX="1261.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        " wrappingWidth="183.89691162109375" />
+      <Text fx:id="password_error_txt" fill="RED" layoutX="1239.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        " wrappingWidth="183.89691162109352" />
+      <Text fx:id="cin_error_txt" fill="RED" layoutX="898.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="        " wrappingWidth="206.39999999999986" />
+      <Button fx:id="picture_btn" layoutX="896.0" layoutY="665.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="176.0" styleClass="Register-button" stylesheets="@Styles/login.css" text="Take Profile Picture">
+         <font>
+            <Font name="Nirmala UI Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

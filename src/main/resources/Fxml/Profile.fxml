@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" styleClass="container" stylesheets="@Styles/Profile.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.ProfileController">
+   <AnchorPane layoutX="16.0" layoutY="14.0" prefHeight="832.0" prefWidth="1421.0" styleClass="profile-container">
+      <children>
+         <AnchorPane layoutX="-1.0" layoutY="-2.0" prefHeight="217.0" prefWidth="1421.0" styleClass="profile-background">
+            <children>
+               <ImageView fitHeight="227.0" fitWidth="1422.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../Images/profile-bg.png" />
+                  </image>
+               </ImageView>
+               <Text fx:id="profile_txt" fill="WHITE" layoutX="296.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elon Musk">
+                  <font>
+                     <Font name="Segoe UI" size="44.0" />
+                  </font>
+               </Text>
+               <Button alignment="BASELINE_LEFT" layoutX="1235.0" layoutY="163.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="127.0" styleClass="background-image-btn" text="Upload Image">
+                  <font>
+                     <Font name="Segoe UI Bold" size="12.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../Images/upload-bl.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Button fx:id="update_btn" layoutX="1112.0" layoutY="162.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="108.0" styleClass="update-button" text="Update Profile">
+                  <font>
+                     <Font name="Dubai Bold" size="12.0" />
+                  </font>
+               </Button>
+               <Button fx:id="delete_button" alignment="BASELINE_LEFT" layoutX="968.0" layoutY="163.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="136.0" styleClass="delete-button" stylesheets="@Styles/Profile.css" text="Delete Account" textFill="WHITE">
+                  <graphic>
+                     <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../Images/delete.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Text fx:id="email_txt" fill="WHITE" layoutX="506.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email@email.com" wrappingWidth="191.9999999999999">
+                  <font>
+                     <Font name="Dubai Regular" size="20.0" />
+                  </font>
+               </Text>
+            </children>
+         </AnchorPane>
+         <Circle fill="DODGERBLUE" layoutX="163.0" layoutY="166.0" radius="102.0" stroke="#ffffff00" strokeType="INSIDE" />
+         <ImageView fitHeight="31.0" fitWidth="397.0" layoutX="98.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../Images/profile_label.png" />
+            </image>
+         </ImageView>
+         <Text fx:id="name_txt" layoutX="119.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elon" wrappingWidth="56.69335937499994">
+            <font>
+               <Font name="Dubai Regular" size="26.0" />
+            </font>
+         </Text>
+         <Text fill="#635f5f" layoutX="106.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="56.693359375">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fill="#635f5f" layoutX="508.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="107.693359375">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fill="#635f5f" layoutX="960.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth" wrappingWidth="127.00000000000023">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fill="#635f5f" layoutX="109.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="107.693359375">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fill="#635f5f" layoutX="508.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" wrappingWidth="166.69335937499977">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fill="#635f5f" layoutX="960.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" wrappingWidth="150.693359375">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fx:id="last_name_txt" layoutX="520.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Musk" wrappingWidth="71.69335937499994">
+            <font>
+               <Font name="Dubai Regular" size="26.0" />
+            </font>
+         </Text>
+         <Text fx:id="dob_txt" layoutX="976.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1-1-1" wrappingWidth="158.69335937499994">
+            <font>
+               <Font name="Dubai Regular" size="26.0" />
+            </font>
+         </Text>
+         <Text fx:id="pasword_txt" layoutX="119.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="******" wrappingWidth="95.69335937499994">
+            <font>
+               <Font name="Dubai Regular" size="26.0" />
+            </font>
+         </Text>
+         <Text fx:id="phone_txt" layoutX="499.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11-111-111" wrappingWidth="166.69335937499994">
+            <font>
+               <Font name="Dubai Regular" size="26.0" />
+            </font>
+         </Text>
+         <Text fx:id="adress_txt" layoutX="961.0" layoutY="581.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adress street adress" wrappingWidth="221.693359375">
+            <font>
+               <Font name="Dubai Regular" size="26.0" />
+            </font>
+         </Text>
+         <TextField fx:id="name_update_fld" layoutX="508.0" layoutY="432.0" prefHeight="31.0" prefWidth="266.0" />
+         <TextField fx:id="lastName_update_fld" layoutX="106.0" layoutY="432.0" prefHeight="31.0" prefWidth="266.0" />
+         <TextField fx:id="dob_fld" layoutX="961.0" layoutY="432.0" prefHeight="31.0" prefWidth="266.0" />
+         <TextField fx:id="password_fld" layoutX="106.0" layoutY="559.0" prefHeight="31.0" prefWidth="266.0" />
+         <TextField fx:id="phoneNumber_update_fld" layoutX="499.0" layoutY="559.0" prefHeight="31.0" prefWidth="266.0" />
+         <TextField fx:id="adress_update_fld" layoutX="954.0" layoutY="559.0" prefHeight="31.0" prefWidth="266.0" />
+         <Text fx:id="old_name_txt" layoutX="106.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="56.693359375">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fx:id="old_Lname_txt" layoutX="508.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="last Name" wrappingWidth="95.69335937499994">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fx:id="old_dob_txt" layoutX="961.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dob" wrappingWidth="95.69335937499994">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fx:id="old_password_txt" layoutX="109.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" wrappingWidth="336.69337463378906">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fx:id="old_phoneNumber_txt" layoutX="497.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" wrappingWidth="336.69337463378906">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+         <Text fx:id="old_Adress_txt" layoutX="954.0" layoutY="634.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" wrappingWidth="336.69337463378906">
+            <font>
+               <Font size="21.0" />
+            </font>
+         </Text>
+      </children>
+   </AnchorPane>
+</AnchorPane>
