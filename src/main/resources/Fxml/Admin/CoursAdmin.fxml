@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="864.0" prefWidth="1456.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCoursesController">
-    <children>
-        <Text layoutX="28.0" layoutY="43.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #333;" text="Course Management" wrappingWidth="300.0">
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCoursesController">
+    <BorderPane fx:id="admin_parent" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+        <left>
+            <fx:include source="MenuAdmin.fxml" />
+        </left>
+
+    </BorderPane>
+
+
+        <Text layoutX="105.0" layoutY="59.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #333;" text="Course Management" wrappingWidth="300.0">
             <font>
                 <Font size="24.0" />
             </font>
         </Text>
-        <TableView fx:id="tableCourses" layoutX="28.0" layoutY="75.0" prefHeight="400.0" prefWidth="1400.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc;">
+        <TableView fx:id="tableCourses" layoutX="95.0" layoutY="75.0" prefHeight="400.0" prefWidth="1333.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc;">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
                 <TableColumn fx:id="colTitle" prefWidth="219.0" text="Title" />
@@ -21,7 +36,7 @@
                 <TableColumn fx:id="colCertificationName" prefWidth="215.0" text="Certification Name" />
             </columns>
         </TableView>
-        <VBox layoutX="28.0" layoutY="480.0" prefWidth="1400.0" spacing="10">
+        <VBox layoutX="98.0" layoutY="482.0" prefHeight="102.0" prefWidth="1330.0" spacing="10">
             <children>
                 <HBox spacing="15">
                     <children>
@@ -36,7 +51,7 @@
                         </ComboBox>
                     </children>
                 </HBox>
-                <HBox spacing="10">
+                <HBox prefHeight="39.0" prefWidth="1344.0" spacing="10">
                     <children>
                         <Button fx:id="uploadFileBtn" onAction="#uploadFile" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10;" text="Upload File" />
                         <Button fx:id="addBtn" onAction="#addCourse" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10;" text="Add" />
@@ -44,7 +59,7 @@
                         <Button fx:id="deleteBtn" onAction="#deleteCourse" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10;" text="Delete" />
                     </children>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" spacing="10">
+                <HBox alignment="CENTER_LEFT" prefHeight="8.0" prefWidth="1331.0" spacing="10">
                     <children>
                         <Text fx:id="title_error_txt" fill="red" />
                         <Text fx:id="description_error_txt" fill="red" />
@@ -54,7 +69,7 @@
                 </HBox>
             </children>
         </VBox>
-      <Button layoutX="8.0" layoutY="5.0" mnemonicParsing="false" text="back" onAction="#gotoCertifs" />
+      <Button layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onAction="#gotoCertifs" text="back" />
 
-    </children>
+
 </AnchorPane>

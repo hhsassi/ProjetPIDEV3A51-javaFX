@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="338d4b74-97b2-4294-9f42-df3b55bc0a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminInscriptionCertifController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/models/InscriptionCertif.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/services/ServiceInscriptionCertif.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/InscriptionCertif.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Styles/Admin/Inscription.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/controllers/Admin/AdminCertifsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/services/ServiceCertif.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alphadev/artemisjvfx/services/ServiceCertif.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CertifsAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CoursAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CoursAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/InscriptionCertif.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/InscriptionCertif.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +154,10 @@
       <workItem from="1713541664540" duration="22733000" />
       <workItem from="1713608852355" duration="299000" />
       <workItem from="1713710739857" duration="1011000" />
-      <workItem from="1713728965338" duration="13624000" />
+      <workItem from="1713728965338" duration="13976000" />
+      <workItem from="1713775619341" duration="191000" />
+      <workItem from="1713776758727" duration="1470000" />
+      <workItem from="1713779719408" duration="2238000" />
     </task>
     <servers />
   </component>
