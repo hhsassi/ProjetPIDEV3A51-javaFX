@@ -43,13 +43,7 @@ public class AdminInscriptionCertifController implements Initializable {
     public ServiceInscriptionCertif inscriptionService;
     private InscriptionCertif selectedEnrollment;
 
-    public static final String ACCOUNT_SID = "AC9b9f6e731d8cd0934bd834bc0c806204";
-    public static final String AUTH_TOKEN = "3720b048c3b088580ef1611792ae7b32";
-    private static final String FROM_NUMBER = "+12564148109";
 
-    static {
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
-    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         inscriptionService = new ServiceInscriptionCertif();
