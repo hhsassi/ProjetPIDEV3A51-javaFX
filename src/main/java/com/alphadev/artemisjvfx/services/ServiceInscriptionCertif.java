@@ -1,6 +1,7 @@
 package com.alphadev.artemisjvfx.services;
 
 import com.alphadev.artemisjvfx.models.InscriptionCertif;
+import com.alphadev.artemisjvfx.models.User;
 import com.alphadev.artemisjvfx.utils.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,16 +33,20 @@ public class ServiceInscriptionCertif {
         return names;
     }
 
-
+    // Fetch all enrollments
     public ObservableList<InscriptionCertif> getAllEnrollments() {
         ObservableList<InscriptionCertif> enrollments = FXCollections.observableArrayList();
-        String query = "SELECT ic.id, u.email AS user_email, c.nom_certif FROM inscription_certif ic JOIN user u ON ic.user_id = u.id JOIN certification c ON ic.certification_id = c.id";
+        String query = "SELECT ic.id, u.*, c.nom_certif FROM inscription_certif ic JOIN user u ON ic.user_id = u.id JOIN certification c ON ic.certification_id = c.id";
         try (PreparedStatement pst = cnx.prepareStatement(query); ResultSet rs = pst.executeQuery()) {
             while (rs.next()) {
+                User user = new User(
+                        rs.getString("email"), rs.getString("roles"), rs.getString("password"),
+                        rs.getString("cin"), rs.getString("nom"), rs.getString("prenom"),
+                        rs.getString("num_tel"), rs.getString("adress"), rs.getDate("dob"),
+                        null, rs.getInt("is_verified")
+                );
                 enrollments.add(new InscriptionCertif(
-                        rs.getInt("id"),
-                        rs.getString("user_email"),  // Assuming the column stores email.
-                        rs.getString("nom_certif")
+                        rs.getInt("id"), user, rs.getString("nom_certif")
                 ));
             }
         } catch (SQLException e) {
@@ -49,6 +54,7 @@ public class ServiceInscriptionCertif {
         }
         return enrollments;
     }
+
 
     public String addEnrollmentByAddress(String userAddress, String certName) {
         if (!isValidEmail(userAddress) || !userExists(userAddress)) {

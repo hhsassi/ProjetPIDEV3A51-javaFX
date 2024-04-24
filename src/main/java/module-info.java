@@ -9,6 +9,8 @@ module com.alphadev.artemisjvfx {
     requires java.sql;
     requires mysql.connector.j;
     requires java.desktop;
+    requires java.mail;
+    requires javafx.web;
 
     opens com.alphadev.artemisjvfx to javafx.fxml;
     opens com.alphadev.artemisjvfx.models to javafx.base;

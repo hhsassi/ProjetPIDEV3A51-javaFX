@@ -5,41 +5,40 @@ import javafx.beans.property.StringProperty;
 
 public class InscriptionCertif {
     private int id;
-    private StringProperty userName = new SimpleStringProperty();
+    private User user;  // Using the User object
     private StringProperty certificationName = new SimpleStringProperty();
 
+    public InscriptionCertif(int id, User user, String certificationName) {
+        this.id = id;
+        this.user = user;
+        this.certificationName.set(certificationName);
+    }
+
+    // ID
     public int getId() {
         return id;
     }
 
-    public InscriptionCertif(int id, String userName, String certificationName) {
+    public void setId(int id) {
         this.id = id;
-        this.userName.set(userName);
-        this.certificationName.set(certificationName);
-    }
-    public InscriptionCertif(String userName, String certificationName) {
-        this.setUserName(userName);
-        this.setCertificationName(certificationName);
     }
 
-    public final String getUserName() {
-        return userName.get();
+    // User
+    public User getUser() {
+        return user;
     }
 
-    public final void setUserName(String value) {
-        userName.set(value);
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public StringProperty userNameProperty() {
-        return userName;
-    }
-
-    public final String getCertificationName() {
+    // Certification Name
+    public String getCertificationName() {
         return certificationName.get();
     }
 
-    public final void setCertificationName(String value) {
-        certificationName.set(value);
+    public void setCertificationName(String certificationName) {
+        this.certificationName.set(certificationName);
     }
 
     public StringProperty certificationNameProperty() {

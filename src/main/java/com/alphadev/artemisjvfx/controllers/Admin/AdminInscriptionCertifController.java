@@ -2,6 +2,7 @@ package com.alphadev.artemisjvfx.controllers.Admin;
 
 import com.alphadev.artemisjvfx.models.InscriptionCertif;
 import com.alphadev.artemisjvfx.services.ServiceInscriptionCertif;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import java.util.Properties;
+import javax.mail.*;
+import javax.mail.internet.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,9 +33,8 @@ public class AdminInscriptionCertifController implements Initializable {
     public TableColumn<InscriptionCertif, String> colUserEmail, colCertificationName;
 
 
-
     @FXML
-    public Button updateButton,deleteButton;
+    public Button updateButton, deleteButton;
 
     public ServiceInscriptionCertif inscriptionService;
     private InscriptionCertif selectedEnrollment;
@@ -44,15 +48,15 @@ public class AdminInscriptionCertifController implements Initializable {
         enrollmentsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             selectedEnrollment = newSelection;
             if (selectedEnrollment != null) {
-                userAddressField.setText(selectedEnrollment.getUserName());
+                userAddressField.setText(selectedEnrollment.getUser().getEmail()); // Assuming User has getEmail()
                 certificationComboBox.setValue(selectedEnrollment.getCertificationName());
             }
         });
     }
 
     private void setupTableColumns() {
-        colUserEmail.setCellValueFactory(new PropertyValueFactory<>("userName"));
-        colCertificationName.setCellValueFactory(new PropertyValueFactory<>("certificationName"));
+        colUserEmail.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUser().getEmail()));
+        colCertificationName.setCellValueFactory(cellData -> cellData.getValue().certificationNameProperty());
     }
 
     private void populateComboBox() {
@@ -63,7 +67,7 @@ public class AdminInscriptionCertifController implements Initializable {
         ObservableList<InscriptionCertif> enrollments = inscriptionService.getAllEnrollments();
         enrollmentsTable.setItems(enrollments);
     }
-    @FXML
+
     public void handleAddEnrollment() {
         String userAddress = userAddressField.getText();
         String certName = certificationComboBox.getValue();
@@ -74,10 +78,86 @@ public class AdminInscriptionCertifController implements Initializable {
         }
 
         String result = inscriptionService.addEnrollmentByAddress(userAddress, certName);
-        loadEnrollments(); // Refresh the table
-        clearForm(); // Clear form fields
-        showAlert(result.contains("successfully") ? "Success" : "Error", result, "", result.contains("successfully") ? Alert.AlertType.INFORMATION : Alert.AlertType.ERROR);
+        if (result.contains("successfully")) {
+            loadEnrollments(); // Refresh the table
+            clearForm(); // Clear form fields
+
+            // Load the HTML template
+            String htmlTemplate = loadHtmlTemplate();
+
+            // Replace the placeholder with the certification name
+            String htmlBody = htmlTemplate.replace("{{certificationName}}", certName);
+
+            // Send the email with HTML content
+            sendEmail(userAddress, "Inscription Confirmation", htmlBody);
+
+            showAlert("Success", "Enrollment Added", result, Alert.AlertType.INFORMATION);
+        } else {
+            showAlert("Error", result, "", Alert.AlertType.ERROR);
+        }
     }
+
+    private String loadHtmlTemplate() {
+        // Load the HTML template from a file or resource
+        // For simplicity, you can hardcode the HTML template here
+        // Read the HTML template content from a file or resource and return it
+        return "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <title>Certification Details</title>\n" +
+                "    <style>\n" +
+                "        body {\n" +
+                "            font-family: Arial, sans-serif;\n" +
+                "            margin: 0;\n" +
+                "            padding: 0;\n" +
+                "            background-color: #f4f4f4;\n" +
+                "        }\n" +
+                "\n" +
+                "        .container {\n" +
+                "            max-width: 600px;\n" +
+                "            margin: 20px auto;\n" +
+                "            padding: 20px;\n" +
+                "            background-color: #fff;\n" +
+                "            border-radius: 8px;\n" +
+                "            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n" +
+                "        }\n" +
+                "\n" +
+                "        h1 {\n" +
+                "            color: #333;\n" +
+                "            text-align: center;\n" +
+                "        }\n" +
+                "\n" +
+                "        p {\n" +
+                "            color: #666;\n" +
+                "            line-height: 1.6;\n" +
+                "        }\n" +
+                "\n" +
+                "        strong {\n" +
+                "            font-weight: bold;\n" +
+                "        }\n" +
+                "\n" +
+                "        .signature {\n" +
+                "            text-align: center;\n" +
+                "            margin-top: 20px;\n" +
+                "        }\n" +
+                "    </style>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<div class=\"container\">\n" +
+                "    <h1>Congratulations on Your Inscription!</h1>\n" +
+                "    <p>Dear User,</p>\n" +
+                "    <p>You have been successfully subscribed in the following certification:</p>\n" +
+                "    <p><strong>Certification Name:</strong> {{certificationName}}</p>\n" +
+                "    <p>Thank you for choosing our platform.</p>\n" +
+                "    <p class=\"signature\">Best regards,<br>The Admin Team</p>\n" +
+                "</div>\n" +
+                "</body>\n" +
+                "</html>\n";
+    }
+
 
     @FXML
     public void handleUpdateEnrollment() {
@@ -119,6 +199,51 @@ public class AdminInscriptionCertifController implements Initializable {
         certificationComboBox.getSelectionModel().clearSelection();  // Clear selection in the combo box
         enrollmentsTable.getSelectionModel().clearSelection();  // Clear any selection in the table
     }
+    public void sendEmail(String toEmail, String subject, String htmlBody) {
+        final String username = "ahmedfathallah358@gmail.com"; // your email
+        final String password = "myepcfbqtmdzwaon"; // your password
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setSubject(subject);
+
+            // Create a MimeBodyPart to hold the HTML content
+            MimeBodyPart htmlPart = new MimeBodyPart();
+            htmlPart.setContent(htmlBody, "text/html");
+
+            // Create a Multipart object to hold the HTML content and attachments (if any)
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(htmlPart);
+
+            // Set the content of the message to the Multipart object
+            message.setContent(multipart);
+
+            Transport.send(message);
+            System.out.println("Email sent successfully!");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            System.out.println("Failed to send email: " + e.getMessage());
+            showAlert("Email Error", "Failed to Send Email", "Could not send the email to: " + toEmail, Alert.AlertType.ERROR);
+        }
+    }
+
+
+
+
 
 
     public void gotoCertification(ActionEvent actionEvent) {
@@ -139,6 +264,7 @@ public class AdminInscriptionCertifController implements Initializable {
         }
     }
 
-
 }
+
+
 
