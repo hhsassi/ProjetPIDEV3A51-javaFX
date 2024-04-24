@@ -43,7 +43,6 @@ public class AdminInscriptionCertifController implements Initializable {
     public ServiceInscriptionCertif inscriptionService;
     private InscriptionCertif selectedEnrollment;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         inscriptionService = new ServiceInscriptionCertif();
@@ -73,14 +72,7 @@ public class AdminInscriptionCertifController implements Initializable {
         enrollmentsTable.setItems(enrollments);
     }
 
-    public void sendSms(String to, String message) {
-        Message sms = Message.creator(
-                new PhoneNumber(to),  // To number
-                new PhoneNumber(FROM_NUMBER),  // From Twilio number
-                message
-        ).create();
-        System.out.println("Sent message SID: " + sms.getSid());
-    }
+
     public void handleAddEnrollment() {
         String userAddress = userAddressField.getText();
         String certName = certificationComboBox.getValue();
@@ -108,7 +100,7 @@ public class AdminInscriptionCertifController implements Initializable {
             String phoneNumber="+216 29868128";
             String message = "Hello, you've been subscribed to " + certName + "!";
 
-            sendSms(phoneNumber, message);
+
 
             showAlert("Success", "Enrollment Added", result, Alert.AlertType.INFORMATION);
         } else {
