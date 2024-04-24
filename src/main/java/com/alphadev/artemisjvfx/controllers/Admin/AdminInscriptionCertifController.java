@@ -2,6 +2,8 @@ package com.alphadev.artemisjvfx.controllers.Admin;
 
 import com.alphadev.artemisjvfx.models.InscriptionCertif;
 import com.alphadev.artemisjvfx.services.ServiceInscriptionCertif;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,14 +14,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
-import java.util.Properties;
+import com.twilio.Twilio;
+import com.twilio.type.PhoneNumber;
 import javax.mail.*;
-import javax.mail.internet.*;
-
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.net.URL;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class AdminInscriptionCertifController implements Initializable {
@@ -39,6 +43,13 @@ public class AdminInscriptionCertifController implements Initializable {
     public ServiceInscriptionCertif inscriptionService;
     private InscriptionCertif selectedEnrollment;
 
+    public static final String ACCOUNT_SID = "AC9b9f6e731d8cd0934bd834bc0c806204";
+    public static final String AUTH_TOKEN = "3720b048c3b088580ef1611792ae7b32";
+    private static final String FROM_NUMBER = "+12564148109";
+
+    static {
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         inscriptionService = new ServiceInscriptionCertif();
@@ -68,6 +79,14 @@ public class AdminInscriptionCertifController implements Initializable {
         enrollmentsTable.setItems(enrollments);
     }
 
+    public void sendSms(String to, String message) {
+        Message sms = Message.creator(
+                new PhoneNumber(to),  // To number
+                new PhoneNumber(FROM_NUMBER),  // From Twilio number
+                message
+        ).create();
+        System.out.println("Sent message SID: " + sms.getSid());
+    }
     public void handleAddEnrollment() {
         String userAddress = userAddressField.getText();
         String certName = certificationComboBox.getValue();
@@ -90,6 +109,12 @@ public class AdminInscriptionCertifController implements Initializable {
 
             // Send the email with HTML content
             sendEmail(userAddress, "Inscription Confirmation", htmlBody);
+
+
+            String phoneNumber="+216 29868128";
+            String message = "Hello, you've been subscribed to " + certName + "!";
+
+            sendSms(phoneNumber, message);
 
             showAlert("Success", "Enrollment Added", result, Alert.AlertType.INFORMATION);
         } else {
@@ -200,8 +225,8 @@ public class AdminInscriptionCertifController implements Initializable {
         enrollmentsTable.getSelectionModel().clearSelection();  // Clear any selection in the table
     }
     public void sendEmail(String toEmail, String subject, String htmlBody) {
-        final String username = "ahmedfathallah358@gmail.com"; // your email
-        final String password = "myepcfbqtmdzwaon"; // your password
+        final String username = "hhsassi6@gmail.com"; // your email
+        final String password = "nxqvkkpqvunwmgsd"; // your password
 
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "smtp.gmail.com");
@@ -216,9 +241,9 @@ public class AdminInscriptionCertifController implements Initializable {
         });
 
         try {
-            MimeMessage message = new MimeMessage(session);
+            javax.mail.internet.MimeMessage message = new javax.mail.internet.MimeMessage(session);
             message.setFrom(new InternetAddress(username));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
+            message.setRecipients(javax.mail.Message.RecipientType.TO, InternetAddress.parse(toEmail));
             message.setSubject(subject);
 
             // Create a MimeBodyPart to hold the HTML content
