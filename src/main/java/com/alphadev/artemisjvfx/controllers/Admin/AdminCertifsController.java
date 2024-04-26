@@ -6,6 +6,8 @@ import com.alphadev.artemisjvfx.services.ServiceCertif;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.web.WebView;
+import javafx.scene.web.WebEngine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -327,4 +329,63 @@ public class AdminCertifsController implements Initializable  {
             e.printStackTrace();
         }
     }
+
+        public void goToMaps(ActionEvent actionEvent) {
+            Stage mapStage = new Stage();
+            WebView webView = new WebView();
+            WebEngine webEngine = webView.getEngine();
+    
+            double latitude = 36.899500;
+            double longitude = 10.189658;
+    
+            // HTML content with embedded Google Map using your API key
+            String html = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+            #map_canvas { height: 100% }
+        </style>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9SaD0tZsCcoIlUSc9r6zQnZKD6vl3z94"></script>
+        <script type="text/javascript">
+            function initialize() {
+                var mapOptions = {
+                    center: new google.maps.LatLng(36.862499, 10.195556), // Central point between the two locations
+                    zoom: 13,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+                
+                // Coordinates for Esprit faculties
+                var locations = [
+                    {lat: 36.899500, lng: 10.189658, title: 'Esprit Ariana'}, // Approximate location for Esprit Ariana
+                    {lat: 36.86667, lng: 10.195556, title: 'Esprit Charguia'}  // Approximate location for Esprit Charguia
+                ];
+                
+                // Create markers for each location
+                locations.forEach(function(location) {
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(location.lat, location.lng),
+                        map: map,
+                        title: location.title
+                    });
+                });
+            }
+        </script>
+    </head>
+    <body onload="initialize()">
+        <div id="map_canvas" style="width:100%; height:100%"></div>
+    </body>
+    </html>
+    """;
+    
+            webEngine.loadContent(html, "text/html");
+    
+            mapStage.setScene(new Scene(webView, 600, 500));
+            mapStage.setTitle("Google Map");
+            mapStage.show();
+        }
 }
