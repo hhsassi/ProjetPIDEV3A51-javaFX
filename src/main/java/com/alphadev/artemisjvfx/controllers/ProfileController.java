@@ -42,7 +42,7 @@ public class ProfileController implements Initializable {
     public Text profile_txt;
     public Button delete_button;
 
-    public static User user;
+    public static User user = null;
     public Button update_btn;
 
     public TextField name_update_fld;

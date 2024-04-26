@@ -11,6 +11,7 @@ module com.alphadev.artemisjvfx {
     requires java.desktop;
     requires java.mail;
     requires org.bytedeco.opencv;
+    requires twilio;
 
     opens com.alphadev.artemisjvfx to javafx.fxml;
     opens com.alphadev.artemisjvfx.models to javafx.base;

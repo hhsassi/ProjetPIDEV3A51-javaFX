@@ -5,6 +5,10 @@ import com.alphadev.artemisjvfx.controllers.Client.*;
 import com.alphadev.artemisjvfx.gui.gui;
 import com.alphadev.artemisjvfx.models.User;
 import com.alphadev.artemisjvfx.services.ServiceUser;
+import com.alphadev.artemisjvfx.utils.SmsSending;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,6 +37,11 @@ public class LoginController implements Initializable {
     public Button  login_btn;
     public Button signIn_btn;
 
+    //SMS
+    public static final String ACCOUNT_SID = "ACae5665c0b3278c7d2a21487542122dc3";
+    public static final String AUTH_TOKEN = "9a6a3fa610b67f13d64af2f8a1935c55";
+    private static final String FROM_NUMBER = "+18583455486";
+
 
 
 
@@ -48,6 +57,9 @@ public class LoginController implements Initializable {
 
     private ServiceUser serviceUser = new ServiceUser();
 
+    static {
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     login_btn.setOnAction(event-> onLogin());
@@ -78,6 +90,10 @@ public class LoginController implements Initializable {
                     CreditsController.user = user;
                     CertifsController.user = user;
                     ProjetsController.user = user;
+                    //Envoie du SMS conetenant le code de verification
+
+                    String VerifString = "Votre Code de verification est : "+CodeVerification.code;
+                    this.sendSms(VerifString);
                     //Envoie du mail de Verification
                     EmailSender.sendCodeVerif(user.getEmail(),CodeVerification.code,user.getNom() );
 
@@ -115,7 +131,18 @@ public class LoginController implements Initializable {
 
     }
 
+    public  void sendSms( String message) {
+        Message sms = Message.creator(
+                new PhoneNumber("+216 27372431"),  // To number
+                new PhoneNumber(FROM_NUMBER),  // From Twilio number
+                message
+        ).create();
+        System.out.println("Sent message SID: " + sms.getSid());
     }
+
+    }
+
+
 
 
 
