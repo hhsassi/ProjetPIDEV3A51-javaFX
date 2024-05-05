@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane fx:id="mainContentPane" stylesheets="@../styles.css" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F4F6F6;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.Transactions.AjouterTransactionsController">
+    <children>
+        <VBox spacing="20" layoutX="200.0" layoutY="50.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+            <children>
+                <ComboBox fx:id="cbCompteId" promptText="Select Compte ID" />
+                <TextField fx:id="tfMontant" promptText="Montant" />
+                <DatePicker fx:id="dpDate" promptText="Date" />
+                <TextField fx:id="tfRibDest" promptText="RIB Destination" />
+                <Button text="Ajouter" onAction="#handleAjouterTransactions"/>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</StackPane>

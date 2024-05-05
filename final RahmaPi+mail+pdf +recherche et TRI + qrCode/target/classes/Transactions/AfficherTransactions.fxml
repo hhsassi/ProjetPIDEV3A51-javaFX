@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.Transactions.AfficherTransactionsController">
+    <SplitPane dividerPositions="0.38577154308617234" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <VBox minWidth="200.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+
+                <children>
+                    <!-- Ajout du champ de recherche -->
+                    <HBox spacing="10">
+                        <children>
+                            <TextField fx:id="searchByIdTextField" promptText="Rechercher par ID" />
+                            <Button onAction="#searchById" styleClass="crud-button" text="Rechercher" />
+                        </children>
+                    </HBox>
+                    <HBox spacing="10">
+                        <children>
+                            <Button fx:id="sortByDateButton" onAction="#sortByDate" styleClass="crud-button" text="Trier par Date" />
+                            <Button fx:id="sortByIdButton" onAction="#sortById" styleClass="crud-button" text="Trier par ID" />
+                        </children>
+                    </HBox>
+                    <Label text="Consulter Transactions" style="-fx-font-size: 24px; -fx-padding: 10px;" VBox.vgrow="NEVER"/>
+                    <ListView fx:id="transactionsListView" prefHeight="573.0" prefWidth="288.0" VBox.vgrow="ALWAYS" />
+                    <HBox spacing="10">
+                        <children>
+                            <Button fx:id="generatePdfButton" onAction="#generatePdf" styleClass="crud-button" text="Générer PDF" />
+
+                            <Button fx:id="addTransactionButton" onAction="#addTransaction" styleClass="crud-button" text="Ajouter" />
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+            <AnchorPane minWidth="200.0" prefWidth="400.0">
+                <children>
+                    <VBox fx:id="detailsPane" layoutX="10.0" layoutY="30.0" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                        <children>
+                            <ComboBox fx:id="cbCompteId" promptText="Select Compte ID" />
+                            <TextField fx:id="tfMontant" promptText="Montant" />
+                            <DatePicker fx:id="dpDate" promptText="Date" />
+                            <TextField fx:id="tfRibDest" promptText="RIB Destination" />
+                            <HBox spacing="10">
+                                <children>
+                                    <Button fx:id="btnUpdate" onAction="#updateTransaction" styleClass="crud-button" text="Update" />
+                                    <Button fx:id="btnDelete" onAction="#deleteTransaction" styleClass="crud-button" text="Delete" />
+                                </children>
+                            </HBox>
+                            <!-- Ajout de l'ImageView pour afficher l'image -->
+                            <ImageView fx:id="qrCodeImageView" fitWidth="200" fitHeight="200" />
+                        </children>
+                    </VBox>
+                </children>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+</AnchorPane>

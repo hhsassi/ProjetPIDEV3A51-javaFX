@@ -1,0 +1,136 @@
+.image-view {
+    -fx-fill: white; /* Change la couleur de l'image en blanc */
+}
+
+.scroll-pane {
+    -fx-background-color: #02030A;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #10165F;
+    -fx-background-radius: 5em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: black;
+}
+.shadow {
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0.1),10.0,0.0,0.0,10.0);
+}
+.transparent {
+    -fx-background-color: rgba(0,0,0,0);
+}
+/* Sidebar background */
+.sidebar-background {
+    -fx-background-color: #283149; /* Deep navy blue */
+}
+
+/* Sidebar buttons */
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff; /* White text */
+    -fx-font-size: 16px;
+    -fx-padding: 10 20; /* Padding inside buttons */
+    -fx-border-width: 0;
+    -fx-alignment: center-left;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #404b69; /* Lighter shade of blue for hover */
+    -fx-text-fill: #dae1e7; /* Lighter text on hover for better contrast */
+}
+
+.sidebar-button:pressed {
+    -fx-background-color: #596275; /* Vibrant shade of blue for pressed state */
+}
+
+/* Content area */
+.content-area {
+    -fx-background-color: #02030A; /* Very dark blue, nearly black */
+}
+
+/* Welcome label */
+.welcome-label {
+    -fx-font-size: 36px;
+    -fx-font-family: "Arial"; /* or any other preferred font */
+    -fx-text-fill: #ffffff; /* White text */
+}
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-border-insets: 5px;
+    -fx-padding: 5px;
+}
+
+.list-cell {
+    -fx-padding: 10px;
+    -fx-border-color: transparent transparent #ececec transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.list-cell:filled:selected, .list-cell:filled:selected:hover {
+    -fx-background-color: #e1e1e1;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent transparent #adadad transparent;
+}
+
+.crud-button {
+    -fx-background-color: #5F9EA0;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.crud-button:hover {
+    -fx-background-color: #3D708F;
+}
+
+.crud-button:pressed {
+    -fx-background-color: #306080;
+}
+
+
+.text-field {
+    -fx-pref-width: 200;
+    -fx-pref-height: 30;
+    -fx-padding: 4;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+}
+
+.button {
+    -fx-pref-width: 200;
+    -fx-pref-height: 30;
+    -fx-background-color: #273a8c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #4055a8;
+}
+
+
+
