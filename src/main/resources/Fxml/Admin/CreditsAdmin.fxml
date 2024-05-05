@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rech" prefHeight="864.0" prefWidth="1419.0" stylesheets="@../Styles/gestionCredit.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Admin.AdminCreditsController">
+   <children>
+      <Text layoutX="710.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credits Admin">
+         <font>
+            <Font size="48.0" />
+         </font></Text>
+      <TableView fx:id="table_pret" layoutX="285.0" layoutY="127.0" prefHeight="321.0" prefWidth="680.0" stylesheets="@../Styles/Client/Dashboard/Dashboard.css">
+         <columns>
+            <TableColumn fx:id="valeur" prefWidth="75.0" text="Valeur" />
+            <TableColumn fx:id="motif" prefWidth="75.0" text="Motif" />
+            <TableColumn fx:id="salaire" prefWidth="75.0" text="Salaire" />
+            <TableColumn fx:id="garantie" prefWidth="75.0" text="Garantie" />
+            <TableColumn fx:id="valeur_garantie" prefWidth="107.0" text="Valeur Garantie" />
+            <TableColumn fx:id="user_id" prefWidth="107.0" text="User_id" />
+            <TableColumn fx:id="user_id1" prefWidth="107.0" text="ID" />
+         </columns>
+      </TableView>
+      <TableView fx:id="table_remb" layoutX="285.0" layoutY="480.0" prefHeight="271.0" prefWidth="680.0" stylesheets="@../Styles/Client/Dashboard/Dashboard.css">
+         <columns>
+            <TableColumn fx:id="valeur1" prefWidth="105.0" text="Valeur" />
+            <TableColumn fx:id="duree" prefWidth="76.0" text="Duree" />
+            <TableColumn fx:id="valeur_tranche" prefWidth="102.0" text="Valeur_Tranche" />
+            <TableColumn fx:id="etat" prefWidth="104.0" text="Etat" />
+            <TableColumn fx:id="pret_id" prefWidth="108.0" text="Pret_id" />
+            <TableColumn fx:id="id1" prefWidth="108.0" text="ID" />
+         </columns>
+      </TableView>
+      <Button fx:id="supprimer" layoutX="1033.0" layoutY="316.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="25.0" prefWidth="144.0" text="Supprimer" />
+      <Button fx:id="delete" layoutX="1033.0" layoutY="641.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="152.0" text="Supprimer" />
+      <Button fx:id="recherche" layoutX="1033.0" layoutY="570.0" mnemonicParsing="false" onAction="#Recherche" prefHeight="25.0" prefWidth="152.0" text="Recherche" />
+      <TextField fx:id="trech" layoutX="1029.0" layoutY="516.0" prefHeight="25.0" prefWidth="152.0" />
+      <AnchorPane layoutX="-2.0" prefHeight="868.0" prefWidth="121.0" styleClass="side_bar_container" stylesheets="@../Styles/Menu.css">
+         <children>
+            <VBox layoutX="5.0" layoutY="95.0" prefHeight="446.0" prefWidth="68.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="95.0">
+               <children>
+                  <Button fx:id="dashboard_btn" mnemonicParsing="false" prefHeight="40.0" prefWidth="30.0">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-home-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="11.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="transaction_btn" mnemonicParsing="false" prefHeight="66.0" prefWidth="68.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-transaction-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="portefeuille_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-profit-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="credit_btn" mnemonicParsing="false" onAction="#credit_btn" prefHeight="66.0" prefWidth="68.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-bank-account-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="certif_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-diploma-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="projet_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-project-100%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="6.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox layoutX="5.0" layoutY="660.0" prefHeight="150.0" prefWidth="68.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="660.0">
+               <children>
+                  <Button fx:id="profile_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-user-90%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="logout_btn" mnemonicParsing="false" prefHeight="68.0" prefWidth="68.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-log-out-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Button fx:id="order" layoutX="1030.0" layoutY="249.0" mnemonicParsing="false" onAction="#order" prefHeight="25.0" prefWidth="144.0" text="Order" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="client_parent" prefHeight="862.0" prefWidth="1539.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <fx:include source="Menu.fxml" />
+    </left>
+    <center>
+        <fx:include source="Dashboard.fxml" />
+    </center>
+
+</BorderPane>
