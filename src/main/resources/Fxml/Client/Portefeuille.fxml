@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Client.ProjetsController">
+<AnchorPane prefHeight="864.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alphadev.artemisjvfx.controllers.Client.PortefeuilleController">
    <children>
-      <Text layoutX="864.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Portefeuille">
+      <Text layoutX="593.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Portfolio" textAlignment="CENTER" wrappingWidth="340.08221435546875">
          <font>
-            <Font size="20.0" />
+            <Font name="Arial" size="47.0" />
+         </font></Text>
+      <Button fx:id="btnDelete" layoutX="1196.0" layoutY="721.0" mnemonicParsing="false" onAction="#Delete" prefHeight="46.0" prefWidth="106.0" style="-fx-background-color: red;" text="Sell" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_investment" layoutX="149.0" layoutY="103.0" mnemonicParsing="false" onAction="#investments" style="-fx-background-color: blue;" text="Investments" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Button>
+      <Text fill="#999696" layoutX="481.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your investments">
+         <font>
+            <Font name="Arial" size="24.0" />
          </font>
       </Text>
+      <TableView fx:id="table_action" layoutX="481.0" layoutY="326.0" prefHeight="394.0" prefWidth="494.0">
+         <columns>
+            <TableColumn fx:id="SymbolColumn" prefWidth="122.39997863769531" text="Symbol" />
+            <TableColumn fx:id="ValueColumn" prefWidth="118.39996337890625" text="Valeur d'achat" />
+            <TableColumn fx:id="qteColumn" minWidth="0.0" prefWidth="124.0" text="Quantity" />
+         </columns>
+      </TableView>
+      <Label fx:id="totalValueLabel" layoutX="149.0" layoutY="182.0" text="Balance:">
+         <font>
+            <Font name="Arial Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="balance_lbl" layoutX="290.0" layoutY="183.0" text="14533 $">
+         <font>
+            <Font name="Arial" size="27.0" />
+         </font>
+      </Label>
+
    </children>
 </AnchorPane>

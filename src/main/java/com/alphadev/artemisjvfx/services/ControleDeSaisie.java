@@ -20,7 +20,9 @@ public class ControleDeSaisie {
     public boolean chekNumero(String s) {
         return s.matches("[0-9]*") && s.length() ==8 ;
     }
-
+    public boolean checkValeur(String s) {
+        return s.matches("[0-9]*")  ;
+    }
     public  boolean isDateValidAndOver18(LocalDate selectedDate) {
 
         if (selectedDate.isAfter(LocalDate.now())) return false;

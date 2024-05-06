@@ -21,6 +21,9 @@ public class ViewFactory {
     private AnchorPane projetView;
     private AnchorPane certifView;
     private AnchorPane profileView;
+    private AnchorPane InvestmentsView;
+
+
 //Admin
 
     private final StringProperty adminSelectedMenuItem;
@@ -56,6 +59,7 @@ public class ViewFactory {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
         createStage(loader);
     }
+
 
 
     public void showSignInWindow(){
@@ -123,7 +127,20 @@ public class ViewFactory {
         return portefeuilleView;
 
     }
+    public AnchorPane getInvestmentsView() {
+        if(InvestmentsView == null)
+    {
+        try{
+            InvestmentsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Actions.fxml")).load();
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
 
+    }
+        return InvestmentsView;
+
+    }
     public AnchorPane getProjetView()
     {
             if(projetView == null)
@@ -228,6 +245,20 @@ public class ViewFactory {
                 e.printStackTrace();
             }
         return portefeuilleAdminView;
+
+    }
+    public AnchorPane getInvestmentsAdminView() {
+        if(InvestmentsView == null)
+        {
+            try{
+                InvestmentsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Actions.fxml")).load();
+            }catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+
+        }
+        return InvestmentsView;
 
     }
 

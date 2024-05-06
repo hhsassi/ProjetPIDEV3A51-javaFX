@@ -16,6 +16,7 @@ public class User {
     private User auth_code = null;
     private int is_verified;
   /*- -*/
+  private Portefeuille portfolio;
 
   //constructors
     public User() {
@@ -34,7 +35,9 @@ public class User {
         this.dob = dob;
         this.auth_code = auth_code;
         this.is_verified = is_verified;
+
     }
+
 /*- -*/
 
   // getters & setters :
@@ -127,5 +130,12 @@ public class User {
         this.auth_code = auth_code;
     }
   /*- -*/
+  public void addToPortfolio(Actions action) {
+      if (portfolio == null) {
+          portfolio = new Portefeuille();
+      }
+      portfolio.addAction(action);
+  }
+
 }
 

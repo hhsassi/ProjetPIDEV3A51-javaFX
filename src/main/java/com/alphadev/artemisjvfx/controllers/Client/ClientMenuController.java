@@ -58,6 +58,7 @@ public class ClientMenuController implements Initializable {
     {
         gui.getInstance().getViewFactory().getClientSelectedMenuItem().set("Portefeuille");
     }
+
     private void onCertif()
     {
         gui.getInstance().getViewFactory().getClientSelectedMenuItem().set("Certifs");

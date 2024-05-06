@@ -18,6 +18,8 @@ public class ClientController implements Initializable {
                 case "Transactions" -> client_parent.setCenter(gui.getInstance().getViewFactory().getTransactionView());
                 case "Credits" -> client_parent.setCenter(gui.getInstance().getViewFactory().getCreditsView());
                 case "Portefeuille" -> client_parent.setCenter(gui.getInstance().getViewFactory().getPortefeuilleView());
+                case "Investments" -> client_parent.setCenter(gui.getInstance().getViewFactory().getInvestmentsView());
+
                 case "Projets" -> client_parent.setCenter(gui.getInstance().getViewFactory().getProjetView());
                 case "Certifs" -> client_parent.setCenter(gui.getInstance().getViewFactory().getCertifView());
                 case "Profile" -> client_parent.setCenter(gui.getInstance().getViewFactory().getProfileView());

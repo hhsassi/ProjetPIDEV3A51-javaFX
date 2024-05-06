@@ -17,6 +17,8 @@ public class AdminController implements Initializable {
                 case "TransactionsAdmin" -> admin_parent.setCenter(gui.getInstance().getViewFactory().getTransactionAdminView());
                 case "CreditsAdmin" -> admin_parent.setCenter(gui.getInstance().getViewFactory().getCreditsAdminView());
                 case "PortefeuilleAdmin" -> admin_parent.setCenter(gui.getInstance().getViewFactory().getPortefeuilleAdminView());
+                case "Investments" -> admin_parent.setCenter(gui.getInstance().getViewFactory().getInvestmentsAdminView());
+
                 case "ProjetsAdmin" -> admin_parent.setCenter(gui.getInstance().getViewFactory().getProjetAdminView());
                 case "CertifsAdmin" -> admin_parent.setCenter(gui.getInstance().getViewFactory().getCertifAdminView());
                 case "ProfileAdmin" -> admin_parent.setCenter(gui.getInstance().getViewFactory().getProfileView());
